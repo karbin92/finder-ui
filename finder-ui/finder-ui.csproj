@@ -157,6 +157,7 @@
     </Compile>
     <Compile Include="Models\CreateAccountViewModel.cs" />
     <Compile Include="Models\GetProfileVewModel.cs" />
+    <Compile Include="Models\GetProfileVewModel.cs" />
     <Compile Include="Models\UpdateProfileViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -219,6 +220,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\UpdateProfile.cshtml" />
+    <Content Include="Views\UserProfile\EditProfile.cshtml" />
     <Content Include="Views\UserProfile\Index.cshtml" />
     <Content Include="Views\UserProfile\EditProfile.cshtml" />
   </ItemGroup>
