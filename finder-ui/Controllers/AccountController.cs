@@ -24,5 +24,48 @@ namespace finder_ui.Controllers
             var UpdateProfile = new UpdateProfileViewModel();
             return View(UpdateProfile);
         }
+        public ActionResult CreateAccount(CreateAccountViewModel vm)
+        {
+            using( var client = new UserProfileServiceReference.UserProfileServiceClient())
+            {
+                var newUser = new UserProfileServiceReference.NewUser()
+                {
+                    Email = vm.email,
+                    FirstName = vm.firstname,
+                    Surname = vm.surname,
+                    Password = vm.password,
+                    Username = vm.username,
+                };
+
+                var user = client.CreateUser(newUser);
+            }
+
+            return View("UpdateProfile");
+            
+        }
+
+        public ActionResult UpdateAccountInformation(UpdateProfileViewModel vm)
+        {
+            using (var client = new UserProfileServiceReference.UserProfileServiceClient())
+            {
+                var updateUser = new UserProfileServiceReference.User()
+                {
+                    Address = vm.userAddress,
+                    City = vm.userCity,
+                    PersonalCodeNumber = vm.personalnumber,
+                    Phonenumber = vm.userPhoneNumber,
+                    Picture = vm.userProfilePicture,
+                    ZipCode = vm.userZipCode,
+                    Id = vm.id,
+                    
+                };
+
+                var user = client.UpdateUser(updateUser);
+            }
+
+            return View("UpdateProfile");
+
+        }
+
     }
 }
