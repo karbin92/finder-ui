@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TSB100UserProfileWebSite.Models;
+using finder_ui.Models;
 
 namespace finder_ui.Controllers
 {
