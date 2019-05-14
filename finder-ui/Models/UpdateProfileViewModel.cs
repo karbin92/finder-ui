@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TSB100UserProfileWebSite.Models
+namespace finder_ui.Models
 {
     public class UpdateProfileViewModel
     {

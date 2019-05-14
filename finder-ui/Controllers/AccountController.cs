@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using TSB100UserProfileWebSite.Models;
 
-namespace TSB100UserProfileWebSite.Controllers
+namespace finder_ui.Controllers
 {
     public class AccountController : Controller
     {
