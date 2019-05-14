@@ -157,7 +157,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CreateAccountViewModel.cs" />
-    <Compile Include="Models\LoginViewModel.cs" />
+ 
     <Compile Include="Models\UpdateProfileViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -220,8 +220,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\UpdateProfile.cshtml" />
+    <Content Include="Views\UserProfile\EditProfile.cshtml" />
     <Content Include="Views\UserProfile\Index.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
