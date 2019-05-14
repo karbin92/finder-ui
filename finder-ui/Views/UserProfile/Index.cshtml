@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Min Profil</h2>
+
+<table>
+    <tr>
+        <th>Username</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>PersonalCodeNumber</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Email</th>
+        <th>Picture</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m => item.Username)</td>
+            <td>@Html.DisplayFor(m => item.Name)</td>
+            <td>@Html.DisplayFor(m => item.Surname)</td>
+            <td>@Html.DisplayFor(m => item.PersonalCodeNumber)</td>
+            <td>@Html.DisplayFor(m => item.Address)</td>
+            <td>@Html.DisplayFor(m => item.City)</td>
+            <td>@Html.DisplayFor(m => item.Email)</td>
+            <td>@Html.DisplayFor(m => item.Picture)</td>
+        </tr>
+    }
+</table>
+
