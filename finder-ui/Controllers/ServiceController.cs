@@ -46,7 +46,6 @@ namespace finder_ui.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
                 CreateServiceObject createServiceObject = new CreateServiceObject(
                     type,
                     creatorId,
@@ -77,7 +76,7 @@ namespace finder_ui.Controllers
             }
             catch
             {
-                return View();
+                return RedirectToAction("Error");
             }
         }
 
@@ -126,18 +125,6 @@ namespace finder_ui.Controllers
         {
             try
             {
-                /*EditServiceObject editServiceObject = new EditServiceObject(
-                    id,
-                    type,
-                    serviceStatusId,
-                    picture,
-                    title,
-                    description,
-                    price,
-                    startDate,
-                    endDate,
-                    timeNeeded,
-                    subCategoryId);*/
                 var x = subCategoryId;
                 bool editOk = 
                 client.EditService(
@@ -157,7 +144,7 @@ namespace finder_ui.Controllers
             }
             catch
             {
-                return View();
+                return RedirectToAction("Error");
             }
         }
 
@@ -173,15 +160,19 @@ namespace finder_ui.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
                 client.DeleteService(id);
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return RedirectToAction("Error");
             }
+        }
+        
+        public ActionResult Error()
+        {
+            return View();
         }
     }
 }
