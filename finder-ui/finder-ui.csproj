@@ -144,6 +144,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\UserLoginServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\UserProfileServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,11 +165,38 @@
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\UpdateProfileViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionHandler\CustomAuthorization.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Connected Services\UserLoginServiceReference\finder_ui.UserLoginServiceReference.ReturnUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UserLoginServiceReference\finder_ui.UserLoginServiceReference.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\UserLoginServiceReference\LoginService.disco" />
+    <None Include="Connected Services\UserLoginServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\UserLoginServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\UserLoginServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Connected Services\UserProfileServiceReference\finder_ui.UserProfileServiceReference.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\UserLoginServiceReference\LoginService.wsdl" />
+    <None Include="Connected Services\UserLoginServiceReference\LoginService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserLoginServiceReference\LoginService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserLoginServiceReference\LoginService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserLoginServiceReference\LoginService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\UserProfileServiceReference\UserProfileService.disco" />
     <None Include="Connected Services\UserProfileServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\UserProfileServiceReference\configuration.svcinfo" />
@@ -243,6 +275,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\UserLoginServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\UserProfileServiceReference\" />
   </ItemGroup>
   <PropertyGroup>

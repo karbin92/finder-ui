@@ -14,5 +14,10 @@ namespace finder_ui.Models
         public int userZipCode { get; set; }
         public string userPhoneNumber { get; set; }
         public string userProfilePicture { get; set; }
+
+        public string firstname { get; set; }
+        public string surname { get; set; }
+        public string email { get; set; }
+        public string username { get; set; }
     }
 }

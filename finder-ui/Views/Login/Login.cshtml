@@ -6,18 +6,13 @@
             {
                 <div class="form-group">
                     <label for="username">Användarnamn</label>
-                    @*<input type="text" class="form-control text-center" id="userFirstName" aria-describedby="Förnamn" placeholder="Förnamn" required>*@
                     @Html.ValidationMessageFor(vm => vm.username)
                     @Html.TextBoxFor(vm => vm.username, new { @class = "form-control text-center", @placeholder = "Användarnamn / e-post" })
                 </div>
                 <div class="form-group">
                     <label for="userLastName">Lösenord</label>
-                    @*<input type="text" class="form-control text-center" id="userLastName" aria-describedby="Efternamn" placeholder="Efternamn" required>*@
                     @Html.TextBoxFor(vm => vm.userPassword, new { @class = "form-control text-center", @placeholder = "Lösenord" })
                 </div>
-
-
-
                 <button type="submit" class="btn btn-primary">Skapa Konto</button>
             }
         </div>

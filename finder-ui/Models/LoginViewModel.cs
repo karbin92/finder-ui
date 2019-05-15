@@ -9,7 +9,7 @@ namespace finder_ui.Models
     {
         public string username { get; set; }
         public string userPassword { get; set; }
-
-
+        public string Controller { get; set; }
+        public string Action { get; set; }
     }
 }
