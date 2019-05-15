@@ -84,7 +84,10 @@ namespace finder_ui.Controllers
         // GET: Service/Edit/5
         public ActionResult Edit(int id)
         {
-            /*var service = client.GetServiceById(id);
+            Group3ServiceReference.Service service = client.GetServiceById(id);
+            List<Group3ServiceReference.ServiceStatusType> status = client.GetServiceStatusTypes().ToList();
+            List<Group3ServiceReference.SubCategory> subCategory = client.GetSubCategories().ToList();
+            List<Group3ServiceReference.ServiceType> serviceType = client.GetTypes().ToList();
     
             EditServiceObject editService = new EditServiceObject(
                 service.Id,
@@ -97,9 +100,13 @@ namespace finder_ui.Controllers
                 service.StartDate,
                 service.EndDate,
                 service.TimeNeeded,
-                service.SubCategory.Id);*/
+                service.SubCategory.Id,
+                status,
+                subCategory,
+                serviceType
+                );
 
-            return View(client.GetServiceById(id));
+            return View(editService);
         }
 
         // POST: Service/Edit/5
@@ -131,7 +138,7 @@ namespace finder_ui.Controllers
                     endDate,
                     timeNeeded,
                     subCategoryId);*/
-
+                var x = subCategoryId;
                 bool editOk = 
                 client.EditService(
                     id,
@@ -144,7 +151,7 @@ namespace finder_ui.Controllers
                     startDate,
                     endDate,
                     timeNeeded,
-                    subCategoryId);
+                    subCategoryId); 
 
                 return RedirectToAction("Index");
             }
