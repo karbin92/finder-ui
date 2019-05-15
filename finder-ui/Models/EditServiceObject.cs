@@ -23,11 +23,11 @@ namespace finder_ui.Models
             SubCategoryId = subCategoryId;
         }
 
-        public EditServiceObject(int id, int type, int serviceStatusId, string picture, string title, string description, double price, DateTime? startDate, DateTime? endDate, bool timeNeeded, int subCategoryId, List<ServiceStatusType> status, List<SubCategory> subCategory, List<ServiceType> serviceType) : this(id, type, serviceStatusId, picture, title, description, price, startDate, endDate, timeNeeded, subCategoryId)
+        public EditServiceObject(int id, int type, int serviceStatusId, string picture, string title, string description, double price, DateTime? startDate, DateTime? endDate, bool timeNeeded, int subCategoryId, List<ServiceStatusType> statuses, List<SubCategory> subCategories, List<ServiceType> serviceTypes) : this(id, type, serviceStatusId, picture, title, description, price, startDate, endDate, timeNeeded, subCategoryId)
         {
-            StatusList = status;
-            SubCategoryList = subCategory;
-            ServiceTypeList = serviceType;
+            StatusList = statuses;
+            SubCategoryList = subCategories;
+            ServiceTypeList = serviceTypes;
         }
 
         public int Id { get; set; }

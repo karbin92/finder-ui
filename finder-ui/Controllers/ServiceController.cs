@@ -25,8 +25,13 @@ namespace finder_ui.Controllers
 
         // GET: Service/Create
         public ActionResult Create()
-        {
-            return View();
+        { 
+            List<Group3ServiceReference.ServiceStatusType> statuses = client.GetServiceStatusTypes().ToList();
+            List<Group3ServiceReference.SubCategory> subCategories = client.GetSubCategories().ToList();
+            List<Group3ServiceReference.ServiceType> serviceTypes = client.GetTypes().ToList();
+
+            CreateServiceObject createServiceObject = new CreateServiceObject(statuses, subCategories, serviceTypes);
+            return View(createServiceObject);
         }
 
         // POST: Service/Create
@@ -46,6 +51,10 @@ namespace finder_ui.Controllers
         {
             try
             {
+                List<Group3ServiceReference.ServiceStatusType> statuses = client.GetServiceStatusTypes().ToList();
+                List<Group3ServiceReference.SubCategory> subCategories = client.GetSubCategories().ToList();
+                List<Group3ServiceReference.ServiceType> serviceTypes = client.GetTypes().ToList();
+
                 // TODO: Add insert logic here
                 CreateServiceObject createServiceObject = new CreateServiceObject(
                     type,
@@ -85,9 +94,9 @@ namespace finder_ui.Controllers
         public ActionResult Edit(int id)
         {
             Group3ServiceReference.Service service = client.GetServiceById(id);
-            List<Group3ServiceReference.ServiceStatusType> status = client.GetServiceStatusTypes().ToList();
-            List<Group3ServiceReference.SubCategory> subCategory = client.GetSubCategories().ToList();
-            List<Group3ServiceReference.ServiceType> serviceType = client.GetTypes().ToList();
+            List<Group3ServiceReference.ServiceStatusType> statuses = client.GetServiceStatusTypes().ToList();
+            List<Group3ServiceReference.SubCategory> subCategories = client.GetSubCategories().ToList();
+            List<Group3ServiceReference.ServiceType> serviceTypes = client.GetTypes().ToList();
     
             EditServiceObject editService = new EditServiceObject(
                 service.Id,
@@ -101,9 +110,9 @@ namespace finder_ui.Controllers
                 service.EndDate,
                 service.TimeNeeded,
                 service.SubCategory.Id,
-                status,
-                subCategory,
-                serviceType
+                statuses,
+                subCategories,
+                serviceTypes
                 );
 
             return View(editService);

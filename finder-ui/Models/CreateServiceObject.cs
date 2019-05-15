@@ -2,11 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using finder_ui.Group3ServiceReference;
 
 namespace finder_ui.Models
 {
     public class CreateServiceObject
-    {
+    { 
+
+        public CreateServiceObject(List<ServiceStatusType> statuses, List<SubCategory> subCategories, List<ServiceType> serviceTypes)
+        {
+            StatusList = statuses;
+            SubCategoryList = subCategories;
+            ServiceTypeList = serviceTypes;
+        }
 
         public CreateServiceObject(int type, int creatorId, int serviceStatusId, string picture, string title, string description, double price, DateTime? startDate, DateTime? endDate, bool timeNeeded, int subCategoryId)
         {
@@ -34,5 +42,8 @@ namespace finder_ui.Models
         public DateTime? EndDate { get; set; }
         public bool TimeNeeded { get; set; }
         public int SubCategoryId { get; set; }
+        public List<ServiceStatusType> StatusList { get; set; }
+        public List<SubCategory> SubCategoryList { get; set; }
+        public List<ServiceType> ServiceTypeList { get; set; }
     }
 }

@@ -165,6 +165,18 @@
     <Content Include="Connected Services\Group3ServiceReference\finder_ui.Group3ServiceReference.Contract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\Group3ServiceReference\finder_ui.Group3ServiceReference.Category.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Group3ServiceReference\finder_ui.Group3ServiceReference.ServiceStatusType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Group3ServiceReference\finder_ui.Group3ServiceReference.ServiceType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Group3ServiceReference\finder_ui.Group3ServiceReference.SubCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\Group3ServiceReference\Service1.disco" />
     <None Include="Connected Services\Group3ServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\Group3ServiceReference\configuration.svcinfo" />

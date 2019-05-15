@@ -15,6 +15,282 @@ namespace finder_ui.Group3ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceType", Namespace="http://schemas.datacontract.org/2004/07/AnnonsService")]
+    [System.SerializableAttribute()]
+    public partial class ServiceType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceStatusType", Namespace="http://schemas.datacontract.org/2004/07/AnnonsService")]
+    [System.SerializableAttribute()]
+    public partial class ServiceStatusType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SubCategory", Namespace="http://schemas.datacontract.org/2004/07/AnnonsService")]
+    [System.SerializableAttribute()]
+    public partial class SubCategory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ParentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private finder_ui.Group3ServiceReference.Category ParentCategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitelField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Parent {
+            get {
+                return this.ParentField;
+            }
+            set {
+                if ((this.ParentField.Equals(value) != true)) {
+                    this.ParentField = value;
+                    this.RaisePropertyChanged("Parent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public finder_ui.Group3ServiceReference.Category ParentCategory {
+            get {
+                return this.ParentCategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ParentCategoryField, value) != true)) {
+                    this.ParentCategoryField = value;
+                    this.RaisePropertyChanged("ParentCategory");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Titel {
+            get {
+                return this.TitelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitelField, value) != true)) {
+                    this.TitelField = value;
+                    this.RaisePropertyChanged("Titel");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Category", Namespace="http://schemas.datacontract.org/2004/07/AnnonsService")]
+    [System.SerializableAttribute()]
+    public partial class Category : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitelField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Titel {
+            get {
+                return this.TitelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitelField, value) != true)) {
+                    this.TitelField = value;
+                    this.RaisePropertyChanged("Titel");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SearchService", Namespace="http://schemas.datacontract.org/2004/07/AnnonsService")]
     [System.SerializableAttribute()]
     public partial class SearchService : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -419,282 +695,6 @@ namespace finder_ui.Group3ServiceReference {
                 if ((this.ToDateField.Equals(value) != true)) {
                     this.ToDateField = value;
                     this.RaisePropertyChanged("ToDate");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceType", Namespace="http://schemas.datacontract.org/2004/07/AnnonsService")]
-    [System.SerializableAttribute()]
-    public partial class ServiceType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SubCategory", Namespace="http://schemas.datacontract.org/2004/07/AnnonsService")]
-    [System.SerializableAttribute()]
-    public partial class SubCategory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ParentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private finder_ui.Group3ServiceReference.Category ParentCategoryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TitelField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Parent {
-            get {
-                return this.ParentField;
-            }
-            set {
-                if ((this.ParentField.Equals(value) != true)) {
-                    this.ParentField = value;
-                    this.RaisePropertyChanged("Parent");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public finder_ui.Group3ServiceReference.Category ParentCategory {
-            get {
-                return this.ParentCategoryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ParentCategoryField, value) != true)) {
-                    this.ParentCategoryField = value;
-                    this.RaisePropertyChanged("ParentCategory");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Titel {
-            get {
-                return this.TitelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitelField, value) != true)) {
-                    this.TitelField = value;
-                    this.RaisePropertyChanged("Titel");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceStatusType", Namespace="http://schemas.datacontract.org/2004/07/AnnonsService")]
-    [System.SerializableAttribute()]
-    public partial class ServiceStatusType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Category", Namespace="http://schemas.datacontract.org/2004/07/AnnonsService")]
-    [System.SerializableAttribute()]
-    public partial class Category : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TitelField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Titel {
-            get {
-                return this.TitelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitelField, value) != true)) {
-                    this.TitelField = value;
-                    this.RaisePropertyChanged("Titel");
                 }
             }
         }
@@ -1184,6 +1184,66 @@ namespace finder_ui.Group3ServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Group3ServiceReference.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTypes", ReplyAction="http://tempuri.org/IService1/GetTypesResponse")]
+        finder_ui.Group3ServiceReference.ServiceType[] GetTypes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTypes", ReplyAction="http://tempuri.org/IService1/GetTypesResponse")]
+        System.Threading.Tasks.Task<finder_ui.Group3ServiceReference.ServiceType[]> GetTypesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetServiceStatusTypes", ReplyAction="http://tempuri.org/IService1/GetServiceStatusTypesResponse")]
+        finder_ui.Group3ServiceReference.ServiceStatusType[] GetServiceStatusTypes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetServiceStatusTypes", ReplyAction="http://tempuri.org/IService1/GetServiceStatusTypesResponse")]
+        System.Threading.Tasks.Task<finder_ui.Group3ServiceReference.ServiceStatusType[]> GetServiceStatusTypesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSubCategories", ReplyAction="http://tempuri.org/IService1/GetSubCategoriesResponse")]
+        finder_ui.Group3ServiceReference.SubCategory[] GetSubCategories();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSubCategories", ReplyAction="http://tempuri.org/IService1/GetSubCategoriesResponse")]
+        System.Threading.Tasks.Task<finder_ui.Group3ServiceReference.SubCategory[]> GetSubCategoriesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCategories", ReplyAction="http://tempuri.org/IService1/GetCategoriesResponse")]
+        finder_ui.Group3ServiceReference.Category[] GetCategories();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCategories", ReplyAction="http://tempuri.org/IService1/GetCategoriesResponse")]
+        System.Threading.Tasks.Task<finder_ui.Group3ServiceReference.Category[]> GetCategoriesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateCategory", ReplyAction="http://tempuri.org/IService1/CreateCategoryResponse")]
+        bool CreateCategory(string title);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateCategory", ReplyAction="http://tempuri.org/IService1/CreateCategoryResponse")]
+        System.Threading.Tasks.Task<bool> CreateCategoryAsync(string title);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/EditCategory", ReplyAction="http://tempuri.org/IService1/EditCategoryResponse")]
+        bool EditCategory(int id, string title);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/EditCategory", ReplyAction="http://tempuri.org/IService1/EditCategoryResponse")]
+        System.Threading.Tasks.Task<bool> EditCategoryAsync(int id, string title);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteCategory", ReplyAction="http://tempuri.org/IService1/DeleteCategoryResponse")]
+        bool DeleteCategory(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteCategory", ReplyAction="http://tempuri.org/IService1/DeleteCategoryResponse")]
+        System.Threading.Tasks.Task<bool> DeleteCategoryAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateSubCategory", ReplyAction="http://tempuri.org/IService1/CreateSubCategoryResponse")]
+        bool CreateSubCategory(int parentId, string title);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateSubCategory", ReplyAction="http://tempuri.org/IService1/CreateSubCategoryResponse")]
+        System.Threading.Tasks.Task<bool> CreateSubCategoryAsync(int parentId, string title);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteSubCategory", ReplyAction="http://tempuri.org/IService1/DeleteSubCategoryResponse")]
+        bool DeleteSubCategory(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteSubCategory", ReplyAction="http://tempuri.org/IService1/DeleteSubCategoryResponse")]
+        System.Threading.Tasks.Task<bool> DeleteSubCategoryAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/EditSubCategory", ReplyAction="http://tempuri.org/IService1/EditSubCategoryResponse")]
+        bool EditSubCategory(int id, int parentId, string title);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/EditSubCategory", ReplyAction="http://tempuri.org/IService1/EditSubCategoryResponse")]
+        System.Threading.Tasks.Task<bool> EditSubCategoryAsync(int id, int parentId, string title);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AdvancedSearch", ReplyAction="http://tempuri.org/IService1/AdvancedSearchResponse")]
         finder_ui.Group3ServiceReference.Service[] AdvancedSearch(finder_ui.Group3ServiceReference.SearchService searchService);
         
@@ -1264,6 +1324,86 @@ namespace finder_ui.Group3ServiceReference {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public finder_ui.Group3ServiceReference.ServiceType[] GetTypes() {
+            return base.Channel.GetTypes();
+        }
+        
+        public System.Threading.Tasks.Task<finder_ui.Group3ServiceReference.ServiceType[]> GetTypesAsync() {
+            return base.Channel.GetTypesAsync();
+        }
+        
+        public finder_ui.Group3ServiceReference.ServiceStatusType[] GetServiceStatusTypes() {
+            return base.Channel.GetServiceStatusTypes();
+        }
+        
+        public System.Threading.Tasks.Task<finder_ui.Group3ServiceReference.ServiceStatusType[]> GetServiceStatusTypesAsync() {
+            return base.Channel.GetServiceStatusTypesAsync();
+        }
+        
+        public finder_ui.Group3ServiceReference.SubCategory[] GetSubCategories() {
+            return base.Channel.GetSubCategories();
+        }
+        
+        public System.Threading.Tasks.Task<finder_ui.Group3ServiceReference.SubCategory[]> GetSubCategoriesAsync() {
+            return base.Channel.GetSubCategoriesAsync();
+        }
+        
+        public finder_ui.Group3ServiceReference.Category[] GetCategories() {
+            return base.Channel.GetCategories();
+        }
+        
+        public System.Threading.Tasks.Task<finder_ui.Group3ServiceReference.Category[]> GetCategoriesAsync() {
+            return base.Channel.GetCategoriesAsync();
+        }
+        
+        public bool CreateCategory(string title) {
+            return base.Channel.CreateCategory(title);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CreateCategoryAsync(string title) {
+            return base.Channel.CreateCategoryAsync(title);
+        }
+        
+        public bool EditCategory(int id, string title) {
+            return base.Channel.EditCategory(id, title);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EditCategoryAsync(int id, string title) {
+            return base.Channel.EditCategoryAsync(id, title);
+        }
+        
+        public bool DeleteCategory(int id) {
+            return base.Channel.DeleteCategory(id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteCategoryAsync(int id) {
+            return base.Channel.DeleteCategoryAsync(id);
+        }
+        
+        public bool CreateSubCategory(int parentId, string title) {
+            return base.Channel.CreateSubCategory(parentId, title);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CreateSubCategoryAsync(int parentId, string title) {
+            return base.Channel.CreateSubCategoryAsync(parentId, title);
+        }
+        
+        public bool DeleteSubCategory(int id) {
+            return base.Channel.DeleteSubCategory(id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteSubCategoryAsync(int id) {
+            return base.Channel.DeleteSubCategoryAsync(id);
+        }
+        
+        public bool EditSubCategory(int id, int parentId, string title) {
+            return base.Channel.EditSubCategory(id, parentId, title);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EditSubCategoryAsync(int id, int parentId, string title) {
+            return base.Channel.EditSubCategoryAsync(id, parentId, title);
         }
         
         public finder_ui.Group3ServiceReference.Service[] AdvancedSearch(finder_ui.Group3ServiceReference.SearchService searchService) {
