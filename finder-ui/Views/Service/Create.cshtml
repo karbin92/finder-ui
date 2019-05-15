@@ -18,7 +18,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Type, "Annonstyp", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(x => Model.Type, new SelectList(Model.ServiceTypeList, "Id", "Name"), new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -34,7 +34,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.ServiceStatusId, "Annonsstatus", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.ServiceStatusId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(x => Model.ServiceStatusId, new SelectList(Model.StatusList, "Id", "Name"), new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.ServiceStatusId, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -90,24 +90,28 @@
     <div class="form-group">
         @Html.LabelFor(model => model.TimeNeeded, "Krävs specifik tidpunkt?", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.TimeNeeded)
-                @Html.ValidationMessageFor(model => model.TimeNeeded, "", new { @class = "text-danger" })
-            </div>
+            Ja
+            @Html.RadioButtonFor(m => m.TimeNeeded, "true")
+            Nej
+            @Html.RadioButtonFor(m => m.TimeNeeded, "false")
+
+            @Html.ValidationMessageFor(model => model.TimeNeeded, "", new { @class = "text-danger" })
+
         </div>
     </div>
+
 
     <div class="form-group">
         @Html.LabelFor(model => model.SubCategoryId, "Underkategori", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.SubCategoryId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(x => Model.SubCategoryId, new SelectList(Model.SubCategoryList, "Id", "Titel"), new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.SubCategoryId, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+            <input type="submit" value="Skapa" class="btn btn-default" />
         </div>
     </div>
 </div>
