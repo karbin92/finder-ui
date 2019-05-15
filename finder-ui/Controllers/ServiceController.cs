@@ -63,15 +63,16 @@ namespace finder_ui.Controllers
                 client.CreateService(
                     createServiceObject.Type,
                     createServiceObject.CreatorId,
-                       createServiceObject.ServiceStatusId,
-                       createServiceObject.Picture,
-                       createServiceObject.Title,
-                       createServiceObject.Description,
-                       createServiceObject.Price,
-                       createServiceObject.StartDate,
-                       createServiceObject.EndDate,
-                       createServiceObject.TimeNeeded,
-                       createServiceObject.SubCategoryId);
+                    createServiceObject.ServiceStatusId,
+                    createServiceObject.Picture,
+                    createServiceObject.Title,
+                    createServiceObject.Description,
+                    createServiceObject.Price,
+                    createServiceObject.StartDate,
+                    createServiceObject.EndDate,
+                    createServiceObject.TimeNeeded,
+                    createServiceObject.SubCategoryId);
+
                 return RedirectToAction("Index");
             }
             catch
@@ -83,17 +84,74 @@ namespace finder_ui.Controllers
         // GET: Service/Edit/5
         public ActionResult Edit(int id)
         {
-            
-            return View();
+            Group3ServiceReference.Service service = client.GetServiceById(id);
+            List<Group3ServiceReference.ServiceStatusType> status = client.GetServiceStatusTypes().ToList();
+            List<Group3ServiceReference.SubCategory> subCategory = client.GetSubCategories().ToList();
+            List<Group3ServiceReference.ServiceType> serviceType = client.GetTypes().ToList();
+    
+            EditServiceObject editService = new EditServiceObject(
+                service.Id,
+                service.ServiceType.Id,
+                service.ServiceStatus.Id,
+                service.Picture,
+                service.Title,
+                service.Description,
+                service.Price,
+                service.StartDate,
+                service.EndDate,
+                service.TimeNeeded,
+                service.SubCategory.Id,
+                status,
+                subCategory,
+                serviceType
+                );
+
+            return View(editService);
         }
 
         // POST: Service/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(
+            int id, 
+            int type,
+            int serviceStatusId,
+            string picture,
+            string title,
+            string description,
+            double price,
+            DateTime? startDate,
+            DateTime? endDate,
+            bool timeNeeded,
+            int subCategoryId)
         {
             try
             {
-                // TODO: Add update logic here
+                /*EditServiceObject editServiceObject = new EditServiceObject(
+                    id,
+                    type,
+                    serviceStatusId,
+                    picture,
+                    title,
+                    description,
+                    price,
+                    startDate,
+                    endDate,
+                    timeNeeded,
+                    subCategoryId);*/
+                var x = subCategoryId;
+                bool editOk = 
+                client.EditService(
+                    id,
+                    type,
+                    serviceStatusId,
+                    picture,
+                    title,
+                    description,
+                    price,
+                    startDate,
+                    endDate,
+                    timeNeeded,
+                    subCategoryId); 
 
                 return RedirectToAction("Index");
             }
