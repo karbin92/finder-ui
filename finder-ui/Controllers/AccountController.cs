@@ -54,8 +54,7 @@ namespace finder_ui.Controllers
                 if (user != null)
                 {
                     Session["AuthorizedAsUser"] = "true";
-                    var UserInfo = client.GetUserByUserName(vm.username);
-                    Session["UserId"] = UserInfo.Id;
+                    Session["UserId"] = client.GetUserByUserName(vm.username).Id;
                 }
 
 
@@ -126,7 +125,7 @@ namespace finder_ui.Controllers
                     Name = Userinfo.Name,
                     Surname = Userinfo.Surname,
                     Username = Userinfo.Username,
-
+                    
                     
 
                 };

@@ -19,17 +19,18 @@ namespace finder_ui.Controllers
                 //    Password = vm.userPassword,
                 //    Username = vm.username,
                 //};
+                
 
-               if(client.UserLogin(vm.username, vm.userPassword) == true)
+               if(client.UserLogin(vm.username, vm.userPassword))
                 {
                     Session["AuthorizedAsUser"] = "true";
-                    //var UserInfo = client.GetUserByUserName(vm.username);
-                    //Session["UserId"] = UserInfo.Id;
-                   
+                    var userid = client.GetActiveUsers().FirstOrDefault(x => x.Email == vm.username).ID;
+                    Session["UserID"] = userid;
                 }
                 else
                 {
-
+                    Session["AuthorizedAsUser"] = "false";
+                    Session["UserID"] = null;
                 }
             }
 
