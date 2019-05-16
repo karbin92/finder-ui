@@ -32,13 +32,13 @@ namespace finder_ui.Controllers
             {
                 var updateUser = new UserProfileServiceReference.User()
                 {
-                    Address = vm.userAddress,
-                    City = vm.userCity,
-                    Email = vm.userEmail,
-                    Phonenumber = vm.userPhoneNumber,
-                    Picture = vm.userProfilePicture,
-                    ZipCode = vm.userZipCode,
-                    Id = vm.id,
+                    Address = vm.UserAddress,
+                    City = vm.UserCity,
+                    Email = vm.UserEmail,
+                    Phonenumber = vm.UserPhoneNumber,
+                    Picture = vm.UserProfilePicture,
+                    ZipCode = vm.UserZipCode,
+                    Id = vm.UserId,
 
                 };
 

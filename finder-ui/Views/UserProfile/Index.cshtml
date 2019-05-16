@@ -1,4 +1,4 @@
-﻿@model finder_ui.Models.GetProfileViewModel
+﻿@model finder_ui.Models.EditProfileViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -12,35 +12,35 @@
 <table class="table">
     <tr>
         <th>Användarnamn</th>
-        <td>@Html.DisplayFor(m => Model.Username) Användarnamn</td>
+        <td>@Html.DisplayFor(m => Model.UserName) Användarnamn</td>
     <tr>
     <tr>
         <th>Förnamn</th>
-        <td>@Html.DisplayFor(m => Model.Name) asd</td>
+        <td>@Html.DisplayFor(m => Model.UserFirstName) asd</td>
     </tr>
     <tr>
         <th>Efternamn</th>
-        <td>@Html.DisplayFor(m => Model.Surname) asd</td>
+        <td>@Html.DisplayFor(m => Model.UserSurname) asd</td>
     </tr>
     <tr>
         <th>Personnummer</th>
-        <td>@Html.DisplayFor(m => Model.PersonalCodeNumber) asd</td>
+        <td>@Html.DisplayFor(m => Model.UserPersonalCodeNumber) asd</td>
     </tr>
     <tr>
         <th>Adress</th>
-        <td>@Html.DisplayFor(m => Model.Address) asd</td>
+        <td>@Html.DisplayFor(m => Model.UserAddress) asd</td>
     </tr>
     <tr>
         <th>Stad</th>
-        <td>@Html.DisplayFor(m => Model.City) asd</td>
+        <td>@Html.DisplayFor(m => Model.UserCity) asd</td>
     </tr>
     <tr>
         <th>Email</th>
-        <td>@Html.DisplayFor(m => Model.Email) asd</td>
+        <td>@Html.DisplayFor(m => Model.UserEmail) asd</td>
     </tr>
     <tr>
         <th>Bild</th>
-        <td>@Html.DisplayFor(m => Model.Picture) asd</td>
+        <td>@Html.DisplayFor(m => Model.UserProfilePicture) asd</td>
     </tr>
 </table>
 
