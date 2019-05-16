@@ -9,23 +9,27 @@ namespace finder_ui.Controllers
 {
     public class LoginController : Controller
     {
-        // GET: Login
+        [HttpGet]
+        public ActionResult Login()
+        {
+            var viewModel = new LoginViewModel
+            {
+                Controller = TempData["ReturnToController"].ToString(),
+                Action = TempData["ReturnToAction"].ToString(),
+            };
+            return View(viewModel);
+        }
+
+        [HttpPost]
         public ActionResult Login(LoginViewModel vm)
         {
             using (var client = new UserLoginServiceReference.LoginServiceClient())
             {
-                //var ExistingUser = new UserLoginServiceReference.Users()
-                //{
-                //    Password = vm.userPassword,
-                //    Username = vm.username,
-                //};
-                
-
-               if(client.UserLogin(vm.username, vm.userPassword))
+                if (client.UserLogin(vm.username, vm.userPassword))
                 {
                     Session["AuthorizedAsUser"] = "true";
-                    var userid = client.GetActiveUsers().FirstOrDefault(x => x.Email == vm.username).ID;
-                    Session["UserID"] = userid;
+                    Session["UserID"] = client.GetUserId(vm.username);
+                    return RedirectToAction(vm.Action, vm.Controller);
                 }
                 else
                 {
@@ -33,8 +37,7 @@ namespace finder_ui.Controllers
                     Session["UserID"] = null;
                 }
             }
-
-            return View();
+            return View(vm);
         }
     }
 }

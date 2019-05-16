@@ -22,11 +22,11 @@
     <MetadataSource Address="http://193.10.202.81/UserProfileService/UserProfileService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UserProfileService.xsd" MetadataType="Schema" ID="56abcb5e-7a37-41d1-bde6-0e53ae306f13" SourceId="1" SourceUrl="http://193.10.202.81/UserProfileService/UserProfileService.svc?xsd=xsd0" />
-    <MetadataFile FileName="UserProfileService.wsdl" MetadataType="Wsdl" ID="9aea396d-2112-4a1b-b212-467df8d7934e" SourceId="1" SourceUrl="http://193.10.202.81/UserProfileService/UserProfileService.svc?wsdl" />
-    <MetadataFile FileName="UserProfileService.disco" MetadataType="Disco" ID="d370bf30-157e-4e72-8d14-3b1bd6241df4" SourceId="1" SourceUrl="http://193.10.202.81/UserProfileService/UserProfileService.svc?disco" />
-    <MetadataFile FileName="UserProfileService1.xsd" MetadataType="Schema" ID="e2634ef0-4356-4806-a57c-76d2944a5372" SourceId="1" SourceUrl="http://193.10.202.81/UserProfileService/UserProfileService.svc?xsd=xsd2" />
-    <MetadataFile FileName="UserProfileService2.xsd" MetadataType="Schema" ID="a8bf420f-a4a4-4f0d-bc76-ffbc3eb783ac" SourceId="1" SourceUrl="http://193.10.202.81/UserProfileService/UserProfileService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserProfileService.xsd" MetadataType="Schema" ID="d7039301-2ff0-4456-bfc8-954b11fb5ed4" SourceId="1" SourceUrl="http://193.10.202.81/UserProfileService/UserProfileService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserProfileService.wsdl" MetadataType="Wsdl" ID="53ecb4df-cd41-46af-a72b-c5cc427a5c8a" SourceId="1" SourceUrl="http://193.10.202.81/UserProfileService/UserProfileService.svc?wsdl" />
+    <MetadataFile FileName="UserProfileService.disco" MetadataType="Disco" ID="e79a7c2b-c157-4365-8b51-d216b7dfce38" SourceId="1" SourceUrl="http://193.10.202.81/UserProfileService/UserProfileService.svc?disco" />
+    <MetadataFile FileName="UserProfileService1.xsd" MetadataType="Schema" ID="003f6c4b-0d4e-4375-9370-5f774aa99e15" SourceId="1" SourceUrl="http://193.10.202.81/UserProfileService/UserProfileService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserProfileService2.xsd" MetadataType="Schema" ID="0650adce-c36a-4c03-aa47-d51fd0216a2a" SourceId="1" SourceUrl="http://193.10.202.81/UserProfileService/UserProfileService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

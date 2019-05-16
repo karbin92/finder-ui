@@ -12,7 +12,7 @@ namespace finder_ui.Controllers
     public class AccountController : Controller
     {
 
-        
+
 
         // GET: CreateAccount
         public ActionResult Index()
@@ -24,8 +24,8 @@ namespace finder_ui.Controllers
         public ActionResult UpdateProfile(UpdateProfileViewModel vm)
         {
             var UpdateProfile = new UpdateProfileViewModel();
-            
-           
+
+
 
             return View(UpdateProfile);
 
@@ -61,7 +61,7 @@ namespace finder_ui.Controllers
 
             }
 
-            if (Session ["AuthorizedAsUser"]=="true")
+            if (Session["AuthorizedAsUser"] == "true")
             {
                 return View("UpdateProfile");
             }
@@ -69,7 +69,7 @@ namespace finder_ui.Controllers
             {
                 return View("Index");
             }
-            
+
         }
 
         //inloggnings saker
@@ -103,17 +103,42 @@ namespace finder_ui.Controllers
         }
 
         [CustomAuthorization]
-        public ActionResult UpdateAccountInformation(UpdateProfileViewModel vm)
+        [HttpGet]
+        public ActionResult UpdateUserProfile()
         {
-            
-
             using (var client = new UserProfileServiceReference.UserProfileServiceClient())
             {
+
                 int.TryParse(Session["UserId"].ToString(), out int userid);
+                var Userinfo = client.GetUserByUserId(userid);
+
+                var viewModel = new UpdateProfileViewModel()
+                {
+                    personalnumber = Userinfo.PersonalCodeNumber,
+                    userPhoneNumber = Userinfo.Phonenumber,
+                    userCity = Userinfo.City,
+                    userAddress = Userinfo.Address,
+                    userZipCode = Userinfo.ZipCode,
+                    userProfilePicture = Userinfo.Picture,
+                };
+                return View(viewModel);
+            }
+        }
+
+
+        [CustomAuthorization]
+        [HttpPost]
+        public ActionResult UpdateUserProfile(UpdateProfileViewModel vm)
+        {
+            using (var client = new UserProfileServiceReference.UserProfileServiceClient())
+            {
+
+                
+                int.TryParse(Session["UserId"].ToString(), out int userid);
+
                 var Userinfo = client.GetUserByUserId(userid);
                 var updateUser = new UserProfileServiceReference.User()
                 {
-                    
                     Address = vm.userAddress,
                     City = vm.userCity,
                     PersonalCodeNumber = vm.personalnumber,
@@ -125,15 +150,12 @@ namespace finder_ui.Controllers
                     Name = Userinfo.Name,
                     Surname = Userinfo.Surname,
                     Username = Userinfo.Username,
-                    
-                    
-
                 };
 
                 var user = client.UpdateUser(updateUser);
             }
 
-            return View("UpdateProfile");
+            return View();
 
         }
 

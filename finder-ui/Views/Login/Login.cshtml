@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col align-self-center">
-            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
             {
                 <div class="form-group">
                     <label for="username">Användarnamn</label>
@@ -13,6 +13,8 @@
                     <label for="userLastName">Lösenord</label>
                     @Html.TextBoxFor(vm => vm.userPassword, new { @class = "form-control text-center", @placeholder = "Lösenord" })
                 </div>
+                @Html.HiddenFor(vm => vm.Action)
+                @Html.HiddenFor(vm => vm.Controller)
                 <button type="submit" class="btn btn-primary">Skapa Konto</button>
             }
         </div>

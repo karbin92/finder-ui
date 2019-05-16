@@ -233,15 +233,143 @@ namespace finder_ui.UserLoginServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/LoginProject.Interface")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InterfaceFlaggedUser", Namespace="http://schemas.datacontract.org/2004/07/LoginProject.Interface")]
     [System.SerializableAttribute()]
-    public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class InterfaceFlaggedUser : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private finder_ui.UserLoginServiceReference.InterfaceUser FlaggedByField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FlaggedByUserIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReasonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private finder_ui.UserLoginServiceReference.InterfaceUser WhoIsFlaggedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int WhoIsFlaggedIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public finder_ui.UserLoginServiceReference.InterfaceUser FlaggedBy {
+            get {
+                return this.FlaggedByField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FlaggedByField, value) != true)) {
+                    this.FlaggedByField = value;
+                    this.RaisePropertyChanged("FlaggedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FlaggedByUserId {
+            get {
+                return this.FlaggedByUserIdField;
+            }
+            set {
+                if ((this.FlaggedByUserIdField.Equals(value) != true)) {
+                    this.FlaggedByUserIdField = value;
+                    this.RaisePropertyChanged("FlaggedByUserId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Reason {
+            get {
+                return this.ReasonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReasonField, value) != true)) {
+                    this.ReasonField = value;
+                    this.RaisePropertyChanged("Reason");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public finder_ui.UserLoginServiceReference.InterfaceUser WhoIsFlagged {
+            get {
+                return this.WhoIsFlaggedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WhoIsFlaggedField, value) != true)) {
+                    this.WhoIsFlaggedField = value;
+                    this.RaisePropertyChanged("WhoIsFlagged");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int WhoIsFlaggedID {
+            get {
+                return this.WhoIsFlaggedIDField;
+            }
+            set {
+                if ((this.WhoIsFlaggedIDField.Equals(value) != true)) {
+                    this.WhoIsFlaggedIDField = value;
+                    this.RaisePropertyChanged("WhoIsFlaggedID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InterfaceUser", Namespace="http://schemas.datacontract.org/2004/07/LoginProject.Interface")]
+    [System.SerializableAttribute()]
+    public partial class InterfaceUser : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstnameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
@@ -256,10 +384,16 @@ namespace finder_ui.UserLoginServiceReference {
         private finder_ui.UserLoginServiceReference.Roles RolesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private finder_ui.UserLoginServiceReference.Status StatusField;
+        private finder_ui.UserLoginServiceReference.InterfaceStatus StatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> StatusIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SurnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -280,6 +414,19 @@ namespace finder_ui.UserLoginServiceReference {
                 if ((object.ReferenceEquals(this.EmailField, value) != true)) {
                     this.EmailField = value;
                     this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Firstname {
+            get {
+                return this.FirstnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstnameField, value) != true)) {
+                    this.FirstnameField = value;
+                    this.RaisePropertyChanged("Firstname");
                 }
             }
         }
@@ -337,7 +484,7 @@ namespace finder_ui.UserLoginServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public finder_ui.UserLoginServiceReference.Status Status {
+        public finder_ui.UserLoginServiceReference.InterfaceStatus Status {
             get {
                 return this.StatusField;
             }
@@ -358,6 +505,32 @@ namespace finder_ui.UserLoginServiceReference {
                 if ((this.StatusIDField.Equals(value) != true)) {
                     this.StatusIDField = value;
                     this.RaisePropertyChanged("StatusID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Surname {
+            get {
+                return this.SurnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
+                    this.SurnameField = value;
+                    this.RaisePropertyChanged("Surname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Username {
+            get {
+                return this.UsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
                 }
             }
         }
@@ -451,9 +624,9 @@ namespace finder_ui.UserLoginServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Status", Namespace="http://schemas.datacontract.org/2004/07/LoginProject")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InterfaceStatus", Namespace="http://schemas.datacontract.org/2004/07/LoginProject.Interface")]
     [System.SerializableAttribute()]
-    public partial class Status : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class InterfaceStatus : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -462,10 +635,7 @@ namespace finder_ui.UserLoginServiceReference {
         private int IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Status1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private finder_ui.UserLoginServiceReference.UserStatus[] UserStatusField;
+        private string StatusNameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -491,27 +661,14 @@ namespace finder_ui.UserLoginServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Status1 {
+        public string StatusName {
             get {
-                return this.Status1Field;
+                return this.StatusNameField;
             }
             set {
-                if ((object.ReferenceEquals(this.Status1Field, value) != true)) {
-                    this.Status1Field = value;
-                    this.RaisePropertyChanged("Status1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public finder_ui.UserLoginServiceReference.UserStatus[] UserStatus {
-            get {
-                return this.UserStatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserStatusField, value) != true)) {
-                    this.UserStatusField = value;
-                    this.RaisePropertyChanged("UserStatus");
+                if ((object.ReferenceEquals(this.StatusNameField, value) != true)) {
+                    this.StatusNameField = value;
+                    this.RaisePropertyChanged("StatusName");
                 }
             }
         }
@@ -536,10 +693,19 @@ namespace finder_ui.UserLoginServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private finder_ui.UserLoginServiceReference.BlockedUsers[] BlockedUsersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FirstnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private finder_ui.UserLoginServiceReference.FlaggedUsers[] FlaggedUsersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private finder_ui.UserLoginServiceReference.FlaggedUsers[] FlaggedUsers1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
@@ -554,16 +720,13 @@ namespace finder_ui.UserLoginServiceReference {
         private finder_ui.UserLoginServiceReference.Roles RolesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private finder_ui.UserLoginServiceReference.Status StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int StatusIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SurnameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private finder_ui.UserLoginServiceReference.UserStatus[] UserStatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private finder_ui.UserLoginServiceReference.UserStatus[] UserStatus1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UsernameField;
@@ -575,6 +738,19 @@ namespace finder_ui.UserLoginServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public finder_ui.UserLoginServiceReference.BlockedUsers[] BlockedUsers {
+            get {
+                return this.BlockedUsersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BlockedUsersField, value) != true)) {
+                    this.BlockedUsersField = value;
+                    this.RaisePropertyChanged("BlockedUsers");
+                }
             }
         }
         
@@ -600,6 +776,32 @@ namespace finder_ui.UserLoginServiceReference {
                 if ((object.ReferenceEquals(this.FirstnameField, value) != true)) {
                     this.FirstnameField = value;
                     this.RaisePropertyChanged("Firstname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public finder_ui.UserLoginServiceReference.FlaggedUsers[] FlaggedUsers {
+            get {
+                return this.FlaggedUsersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FlaggedUsersField, value) != true)) {
+                    this.FlaggedUsersField = value;
+                    this.RaisePropertyChanged("FlaggedUsers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public finder_ui.UserLoginServiceReference.FlaggedUsers[] FlaggedUsers1 {
+            get {
+                return this.FlaggedUsers1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FlaggedUsers1Field, value) != true)) {
+                    this.FlaggedUsers1Field = value;
+                    this.RaisePropertyChanged("FlaggedUsers1");
                 }
             }
         }
@@ -657,6 +859,19 @@ namespace finder_ui.UserLoginServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public finder_ui.UserLoginServiceReference.Status Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int StatusID {
             get {
                 return this.StatusIDField;
@@ -678,32 +893,6 @@ namespace finder_ui.UserLoginServiceReference {
                 if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
                     this.SurnameField = value;
                     this.RaisePropertyChanged("Surname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public finder_ui.UserLoginServiceReference.UserStatus[] UserStatus {
-            get {
-                return this.UserStatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserStatusField, value) != true)) {
-                    this.UserStatusField = value;
-                    this.RaisePropertyChanged("UserStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public finder_ui.UserLoginServiceReference.UserStatus[] UserStatus1 {
-            get {
-                return this.UserStatus1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserStatus1Field, value) != true)) {
-                    this.UserStatus1Field = value;
-                    this.RaisePropertyChanged("UserStatus1");
                 }
             }
         }
@@ -733,9 +922,86 @@ namespace finder_ui.UserLoginServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UserStatus", Namespace="http://schemas.datacontract.org/2004/07/LoginProject")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Status", Namespace="http://schemas.datacontract.org/2004/07/LoginProject")]
     [System.SerializableAttribute()]
-    public partial class UserStatus : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Status : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private finder_ui.UserLoginServiceReference.Users[] UsersField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StatusName {
+            get {
+                return this.StatusNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusNameField, value) != true)) {
+                    this.StatusNameField = value;
+                    this.RaisePropertyChanged("StatusName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public finder_ui.UserLoginServiceReference.Users[] Users {
+            get {
+                return this.UsersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsersField, value) != true)) {
+                    this.UsersField = value;
+                    this.RaisePropertyChanged("Users");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BlockedUsers", Namespace="http://schemas.datacontract.org/2004/07/LoginProject")]
+    [System.SerializableAttribute()]
+    public partial class BlockedUsers : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -750,34 +1016,19 @@ namespace finder_ui.UserLoginServiceReference {
         private System.DateTime DateToField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> FlaggedByField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReasonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private finder_ui.UserLoginServiceReference.Status StatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int SuspendedByField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> TypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int UserIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private finder_ui.UserLoginServiceReference.Users UsersField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private finder_ui.UserLoginServiceReference.Users Users1Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -829,20 +1080,119 @@ namespace finder_ui.UserLoginServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email {
+        public int ID {
             get {
-                return this.EmailField;
+                return this.IDField;
             }
             set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> FlaggedBy {
+        public string Reason {
+            get {
+                return this.ReasonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReasonField, value) != true)) {
+                    this.ReasonField = value;
+                    this.RaisePropertyChanged("Reason");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SuspendedBy {
+            get {
+                return this.SuspendedByField;
+            }
+            set {
+                if ((this.SuspendedByField.Equals(value) != true)) {
+                    this.SuspendedByField = value;
+                    this.RaisePropertyChanged("SuspendedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public finder_ui.UserLoginServiceReference.Users Users {
+            get {
+                return this.UsersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsersField, value) != true)) {
+                    this.UsersField = value;
+                    this.RaisePropertyChanged("Users");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FlaggedUsers", Namespace="http://schemas.datacontract.org/2004/07/LoginProject")]
+    [System.SerializableAttribute()]
+    public partial class FlaggedUsers : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FlaggedByField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReasonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private finder_ui.UserLoginServiceReference.Users UsersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private finder_ui.UserLoginServiceReference.Users Users1Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FlaggedBy {
             get {
                 return this.FlaggedByField;
             }
@@ -876,45 +1226,6 @@ namespace finder_ui.UserLoginServiceReference {
                 if ((object.ReferenceEquals(this.ReasonField, value) != true)) {
                     this.ReasonField = value;
                     this.RaisePropertyChanged("Reason");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public finder_ui.UserLoginServiceReference.Status Status {
-            get {
-                return this.StatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
-                    this.StatusField = value;
-                    this.RaisePropertyChanged("Status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SuspendedBy {
-            get {
-                return this.SuspendedByField;
-            }
-            set {
-                if ((this.SuspendedByField.Equals(value) != true)) {
-                    this.SuspendedByField = value;
-                    this.RaisePropertyChanged("SuspendedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Type {
-            get {
-                return this.TypeField;
-            }
-            set {
-                if ((this.TypeField.Equals(value) != true)) {
-                    this.TypeField = value;
-                    this.RaisePropertyChanged("Type");
                 }
             }
         }
@@ -978,13 +1289,13 @@ namespace finder_ui.UserLoginServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private finder_ui.UserLoginServiceReference.BlockedUsers[] BlockedUsersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PasswordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private finder_ui.UserLoginServiceReference.UserStatus[] UserStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UsernameField;
@@ -996,6 +1307,19 @@ namespace finder_ui.UserLoginServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public finder_ui.UserLoginServiceReference.BlockedUsers[] BlockedUsers {
+            get {
+                return this.BlockedUsersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BlockedUsersField, value) != true)) {
+                    this.BlockedUsersField = value;
+                    this.RaisePropertyChanged("BlockedUsers");
+                }
             }
         }
         
@@ -1021,19 +1345,6 @@ namespace finder_ui.UserLoginServiceReference {
                 if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
                     this.PasswordField = value;
                     this.RaisePropertyChanged("Password");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public finder_ui.UserLoginServiceReference.UserStatus[] UserStatus {
-            get {
-                return this.UserStatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserStatusField, value) != true)) {
-                    this.UserStatusField = value;
-                    this.RaisePropertyChanged("UserStatus");
                 }
             }
         }
@@ -1095,29 +1406,35 @@ namespace finder_ui.UserLoginServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/CheckUser", ReplyAction="http://tempuri.org/ILoginService/CheckUserResponse")]
         System.Threading.Tasks.Task<bool> CheckUserAsync(string Email, string Password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/GetFlaggedUsers", ReplyAction="http://tempuri.org/ILoginService/GetFlaggedUsersResponse")]
-        finder_ui.UserLoginServiceReference.User[] GetFlaggedUsers();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/GetUserId", ReplyAction="http://tempuri.org/ILoginService/GetUserIdResponse")]
+        int GetUserId(string Email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/GetUserId", ReplyAction="http://tempuri.org/ILoginService/GetUserIdResponse")]
+        System.Threading.Tasks.Task<int> GetUserIdAsync(string Email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/GetFlaggedUsers", ReplyAction="http://tempuri.org/ILoginService/GetFlaggedUsersResponse")]
-        System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.User[]> GetFlaggedUsersAsync();
+        finder_ui.UserLoginServiceReference.InterfaceFlaggedUser[] GetFlaggedUsers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/GetFlaggedUsers", ReplyAction="http://tempuri.org/ILoginService/GetFlaggedUsersResponse")]
+        System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.InterfaceFlaggedUser[]> GetFlaggedUsersAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/GetBlockedUsers", ReplyAction="http://tempuri.org/ILoginService/GetBlockedUsersResponse")]
-        finder_ui.UserLoginServiceReference.User[] GetBlockedUsers();
+        finder_ui.UserLoginServiceReference.InterfaceUser[] GetBlockedUsers();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/GetBlockedUsers", ReplyAction="http://tempuri.org/ILoginService/GetBlockedUsersResponse")]
-        System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.User[]> GetBlockedUsersAsync();
+        System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.InterfaceUser[]> GetBlockedUsersAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/GetModerators", ReplyAction="http://tempuri.org/ILoginService/GetModeratorsResponse")]
-        finder_ui.UserLoginServiceReference.User[] GetModerators();
+        finder_ui.UserLoginServiceReference.InterfaceUser[] GetModerators();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/GetModerators", ReplyAction="http://tempuri.org/ILoginService/GetModeratorsResponse")]
-        System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.User[]> GetModeratorsAsync();
+        System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.InterfaceUser[]> GetModeratorsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/GetActiveUsers", ReplyAction="http://tempuri.org/ILoginService/GetActiveUsersResponse")]
-        finder_ui.UserLoginServiceReference.User[] GetActiveUsers();
+        finder_ui.UserLoginServiceReference.InterfaceUser[] GetActiveUsers();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/GetActiveUsers", ReplyAction="http://tempuri.org/ILoginService/GetActiveUsersResponse")]
-        System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.User[]> GetActiveUsersAsync();
+        System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.InterfaceUser[]> GetActiveUsersAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/FlagUser", ReplyAction="http://tempuri.org/ILoginService/FlagUserResponse")]
         bool FlagUser(int FlaggedByUserId, string Reason, int FlaggedUserId);
@@ -1205,35 +1522,43 @@ namespace finder_ui.UserLoginServiceReference {
             return base.Channel.CheckUserAsync(Email, Password);
         }
         
-        public finder_ui.UserLoginServiceReference.User[] GetFlaggedUsers() {
+        public int GetUserId(string Email) {
+            return base.Channel.GetUserId(Email);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetUserIdAsync(string Email) {
+            return base.Channel.GetUserIdAsync(Email);
+        }
+        
+        public finder_ui.UserLoginServiceReference.InterfaceFlaggedUser[] GetFlaggedUsers() {
             return base.Channel.GetFlaggedUsers();
         }
         
-        public System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.User[]> GetFlaggedUsersAsync() {
+        public System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.InterfaceFlaggedUser[]> GetFlaggedUsersAsync() {
             return base.Channel.GetFlaggedUsersAsync();
         }
         
-        public finder_ui.UserLoginServiceReference.User[] GetBlockedUsers() {
+        public finder_ui.UserLoginServiceReference.InterfaceUser[] GetBlockedUsers() {
             return base.Channel.GetBlockedUsers();
         }
         
-        public System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.User[]> GetBlockedUsersAsync() {
+        public System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.InterfaceUser[]> GetBlockedUsersAsync() {
             return base.Channel.GetBlockedUsersAsync();
         }
         
-        public finder_ui.UserLoginServiceReference.User[] GetModerators() {
+        public finder_ui.UserLoginServiceReference.InterfaceUser[] GetModerators() {
             return base.Channel.GetModerators();
         }
         
-        public System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.User[]> GetModeratorsAsync() {
+        public System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.InterfaceUser[]> GetModeratorsAsync() {
             return base.Channel.GetModeratorsAsync();
         }
         
-        public finder_ui.UserLoginServiceReference.User[] GetActiveUsers() {
+        public finder_ui.UserLoginServiceReference.InterfaceUser[] GetActiveUsers() {
             return base.Channel.GetActiveUsers();
         }
         
-        public System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.User[]> GetActiveUsersAsync() {
+        public System.Threading.Tasks.Task<finder_ui.UserLoginServiceReference.InterfaceUser[]> GetActiveUsersAsync() {
             return base.Channel.GetActiveUsersAsync();
         }
         

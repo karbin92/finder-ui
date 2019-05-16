@@ -16,58 +16,72 @@
   <xs:element name="ArrayOfUsers" nillable="true" type="tns:ArrayOfUsers" />
   <xs:complexType name="Users">
     <xs:sequence>
+      <xs:element minOccurs="0" name="BlockedUsers" nillable="true" type="tns:ArrayOfBlockedUsers" />
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Firstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlaggedUsers" nillable="true" type="tns:ArrayOfFlaggedUsers" />
+      <xs:element minOccurs="0" name="FlaggedUsers1" nillable="true" type="tns:ArrayOfFlaggedUsers" />
       <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RoleID" type="xs:int" />
       <xs:element minOccurs="0" name="Roles" nillable="true" type="tns:Roles" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:Status" />
       <xs:element minOccurs="0" name="StatusID" type="xs:int" />
       <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UserStatus" nillable="true" type="tns:ArrayOfUserStatus" />
-      <xs:element minOccurs="0" name="UserStatus1" nillable="true" type="tns:ArrayOfUserStatus" />
       <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Users" nillable="true" type="tns:Users" />
-  <xs:complexType name="ArrayOfUserStatus">
+  <xs:complexType name="ArrayOfBlockedUsers">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserStatus" nillable="true" type="tns:UserStatus" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BlockedUsers" nillable="true" type="tns:BlockedUsers" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfUserStatus" nillable="true" type="tns:ArrayOfUserStatus" />
-  <xs:complexType name="UserStatus">
+  <xs:element name="ArrayOfBlockedUsers" nillable="true" type="tns:ArrayOfBlockedUsers" />
+  <xs:complexType name="BlockedUsers">
     <xs:sequence>
       <xs:element minOccurs="0" name="Admin" nillable="true" type="tns:Admin" />
       <xs:element minOccurs="0" name="DateFrom" type="xs:dateTime" />
       <xs:element minOccurs="0" name="DateTo" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlaggedBy" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:Status" />
       <xs:element minOccurs="0" name="SuspendedBy" type="xs:int" />
-      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="Users" nillable="true" type="tns:Users" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BlockedUsers" nillable="true" type="tns:BlockedUsers" />
+  <xs:complexType name="Admin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlockedUsers" nillable="true" type="tns:ArrayOfBlockedUsers" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Admin" nillable="true" type="tns:Admin" />
+  <xs:complexType name="ArrayOfFlaggedUsers">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FlaggedUsers" nillable="true" type="tns:FlaggedUsers" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlaggedUsers" nillable="true" type="tns:ArrayOfFlaggedUsers" />
+  <xs:complexType name="FlaggedUsers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FlaggedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UserID" type="xs:int" />
       <xs:element minOccurs="0" name="Users" nillable="true" type="tns:Users" />
       <xs:element minOccurs="0" name="Users1" nillable="true" type="tns:Users" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="UserStatus" nillable="true" type="tns:UserStatus" />
-  <xs:complexType name="Admin">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UserStatus" nillable="true" type="tns:ArrayOfUserStatus" />
-      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Admin" nillable="true" type="tns:Admin" />
+  <xs:element name="FlaggedUsers" nillable="true" type="tns:FlaggedUsers" />
   <xs:complexType name="Status">
     <xs:sequence>
       <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Status1" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UserStatus" nillable="true" type="tns:ArrayOfUserStatus" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Users" nillable="true" type="tns:ArrayOfUsers" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Status" nillable="true" type="tns:Status" />

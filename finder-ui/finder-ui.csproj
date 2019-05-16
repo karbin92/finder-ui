@@ -172,7 +172,10 @@
     <Content Include="Connected Services\UserLoginServiceReference\finder_ui.UserLoginServiceReference.ReturnUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\UserLoginServiceReference\finder_ui.UserLoginServiceReference.User.datasource">
+    <Content Include="Connected Services\UserLoginServiceReference\finder_ui.UserLoginServiceReference.InterfaceFlaggedUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UserLoginServiceReference\finder_ui.UserLoginServiceReference.InterfaceUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\UserLoginServiceReference\LoginService.disco" />
@@ -198,13 +201,13 @@
     <None Include="Connected Services\UserLoginServiceReference\LoginService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\UserProfileServiceReference\UserProfileService.disco" />
     <None Include="Connected Services\UserProfileServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\UserProfileServiceReference\configuration.svcinfo" />
     <None Include="Connected Services\UserProfileServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\UserProfileServiceReference\UserProfileService.disco" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -252,7 +255,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
-    <Content Include="Views\Account\UpdateProfile.cshtml" />
+    <Content Include="Views\Account\UpdateUserProfile.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\UserProfile\EditProfile.cshtml" />
     <Content Include="Views\UserProfile\Index.cshtml" />
