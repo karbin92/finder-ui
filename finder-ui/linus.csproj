@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
@@ -144,11 +144,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Connected Services\UserLoginServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Connected Services\UserProfileServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -162,41 +157,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CreateAccountViewModel.cs" />
+    <Compile Include="Models\GetProfileVewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\EditProfileViewModel.cs" />
     <Compile Include="Models\UpdateProfileViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SessionHandler\CustomAuthorization.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Connected Services\UserLoginServiceReference\finder_ui.UserLoginServiceReference.ReturnUser.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\UserLoginServiceReference\finder_ui.UserLoginServiceReference.User.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Connected Services\UserLoginServiceReference\LoginService.disco" />
-    <None Include="Connected Services\UserLoginServiceReference\configuration91.svcinfo" />
-    <None Include="Connected Services\UserLoginServiceReference\configuration.svcinfo" />
-    <None Include="Connected Services\UserLoginServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="Connected Services\UserProfileServiceReference\finder_ui.UserProfileServiceReference.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\UserLoginServiceReference\LoginService.wsdl" />
-    <None Include="Connected Services\UserLoginServiceReference\LoginService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\UserLoginServiceReference\LoginService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\UserLoginServiceReference\LoginService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\UserLoginServiceReference\LoginService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\UserProfileServiceReference\UserProfileService.disco" />
     <None Include="Connected Services\UserProfileServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\UserProfileServiceReference\configuration.svcinfo" />
@@ -252,9 +222,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\UpdateProfile.cshtml" />
-    <Content Include="Views\UserProfile\Index.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\UserProfile\EditProfile.cshtml" />
+    <Content Include="Views\UserProfile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -276,7 +245,6 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\UserLoginServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\UserProfileServiceReference\" />
   </ItemGroup>
   <PropertyGroup>

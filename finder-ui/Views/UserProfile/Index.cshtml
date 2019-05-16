@@ -1,33 +1,47 @@
-﻿@{
+﻿@model finder_ui.Models.GetProfileViewModel
+
+@{
     ViewBag.Title = "Index";
 }
 
 
 <h2>Min Profil</h2>
 
-<table>
+<button onclick="location.href='@Url.Action("EditProfile", "UserProfile")';return false;">Redigera Profil</button>
+
+<table class="table">
     <tr>
-        <th>Username</th>
-        <th>Name</th>
-        <th>Surname</th>
-        <th>PersonalCodeNumber</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>Email</th>
-        <th>Picture</th>
+        <th>Användarnamn</th>
+        <td>@Html.DisplayFor(m => Model.Username) Användarnamn</td>
+    <tr>
+    <tr>
+        <th>Förnamn</th>
+        <td>@Html.DisplayFor(m => Model.Name) asd</td>
     </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@Html.DisplayFor(m => item.Username)</td>
-            <td>@Html.DisplayFor(m => item.Name)</td>
-            <td>@Html.DisplayFor(m => item.Surname)</td>
-            <td>@Html.DisplayFor(m => item.PersonalCodeNumber)</td>
-            <td>@Html.DisplayFor(m => item.Address)</td>
-            <td>@Html.DisplayFor(m => item.City)</td>
-            <td>@Html.DisplayFor(m => item.Email)</td>
-            <td>@Html.DisplayFor(m => item.Picture)</td>
-        </tr>
-    }
+    <tr>
+        <th>Efternamn</th>
+        <td>@Html.DisplayFor(m => Model.Surname) asd</td>
+    </tr>
+    <tr>
+        <th>Personnummer</th>
+        <td>@Html.DisplayFor(m => Model.PersonalCodeNumber) asd</td>
+    </tr>
+    <tr>
+        <th>Adress</th>
+        <td>@Html.DisplayFor(m => Model.Address) asd</td>
+    </tr>
+    <tr>
+        <th>Stad</th>
+        <td>@Html.DisplayFor(m => Model.City) asd</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>@Html.DisplayFor(m => Model.Email) asd</td>
+    </tr>
+    <tr>
+        <th>Bild</th>
+        <td>@Html.DisplayFor(m => Model.Picture) asd</td>
+    </tr>
 </table>
 
+<button onclick="location.href='@Url.Action("Index", "UserProfile")';return false;">Mina Annonser</button>
