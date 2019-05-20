@@ -164,7 +164,18 @@ namespace finder_ui.Controllers
         // GET: Service/Delete/5
         public ActionResult Delete(int id)
         {
-            return View(client.GetServiceById(id));
+            int.TryParse(Session["UserId"].ToString(), out int userid);
+            var service = client.GetServiceById(id);
+
+            if (service.CreatorID == userid)
+            {
+                return View(client.GetServiceById(id));
+            }
+             else
+            {
+                return RedirectToAction("Error");
+            }
+           
         }
 
         // POST: Service/Delete/5
@@ -187,5 +198,8 @@ namespace finder_ui.Controllers
         {
             return View();
         }
+
+
+
     }
 }

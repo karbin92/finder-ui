@@ -14,7 +14,7 @@ namespace finder_ui.Controllers
         {
             using (var client = new UserProfileServiceReference.UserProfileServiceClient())
             {
-                var User = client.GetUserByUserName("Clark");
+                var User = client.GetUserByUserNameOrEmail("Clark");
 
             }
 
