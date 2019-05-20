@@ -31,8 +31,9 @@ namespace finder_ui.Controllers
             List<Group3ServiceReference.ServiceStatusType> statuses = client.GetServiceStatusTypes().ToList();
             List<Group3ServiceReference.SubCategory> subCategories = client.GetSubCategories().ToList();
             List<Group3ServiceReference.ServiceType> serviceTypes = client.GetTypes().ToList();
+            List<Group3ServiceReference.Category> categories = client.GetCategories().ToList();
 
-            CreateServiceObject createServiceObject = new CreateServiceObject(statuses, subCategories, serviceTypes);
+            CreateServiceObject createServiceObject = new CreateServiceObject(statuses, subCategories, serviceTypes, categories);
             return View(createServiceObject);
         }
 
@@ -56,11 +57,14 @@ namespace finder_ui.Controllers
                 List<Group3ServiceReference.ServiceStatusType> statuses = client.GetServiceStatusTypes().ToList();
                 List<Group3ServiceReference.SubCategory> subCategories = client.GetSubCategories().ToList();
                 List<Group3ServiceReference.ServiceType> serviceTypes = client.GetTypes().ToList();
+                List<Group3ServiceReference.Category> categories = client.GetCategories().ToList();
 
-                // TODO: Add insert logic here
+                int.TryParse(Session["UserId"].ToString(), out int userid);
+ 
+
                 CreateServiceObject createServiceObject = new CreateServiceObject(
                     type,
-                    creatorId,
+                    userid,
                     serviceStatusId,
                     picture,
                     title,
@@ -164,18 +168,27 @@ namespace finder_ui.Controllers
         // GET: Service/Delete/5
         public ActionResult Delete(int id)
         {
-            int.TryParse(Session["UserId"].ToString(), out int userid);
-            var service = client.GetServiceById(id);
+            try
+            {
+                int.TryParse(Session["UserId"].ToString(), out int userid);
+                var service = client.GetServiceById(id);
 
-            if (service.CreatorID == userid)
-            {
-                return View(client.GetServiceById(id));
+                if (service.CreatorID == userid)
+                {
+                    return View(service);
+                }
+                else
+                {
+                    return RedirectToAction("Error");
+                }
             }
-             else
+
+            catch (Exception e)
             {
+                Console.WriteLine("Ej inloggad" + e);
                 return RedirectToAction("Error");
             }
-           
+        
         }
 
         // POST: Service/Delete/5
