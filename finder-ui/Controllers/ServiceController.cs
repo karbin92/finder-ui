@@ -164,6 +164,7 @@ namespace finder_ui.Controllers
         // GET: Service/Delete/5
         public ActionResult Delete(int id)
         {
+
             return View(client.GetServiceById(id));
         }
 
