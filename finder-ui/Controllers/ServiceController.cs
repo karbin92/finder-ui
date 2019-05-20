@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using finder_ui.SessionHandler;
+using static finder_ui.SessionHandler.CustomAuthorization;
 
 namespace finder_ui.Controllers
 {
@@ -91,6 +93,7 @@ namespace finder_ui.Controllers
         }
 
         // GET: Service/Edit/5
+        [CustomAuthorization]
         public ActionResult Edit(int id)
         {
             Group3ServiceReference.Service service = client.GetServiceById(id);
