@@ -29,8 +29,9 @@ namespace finder_ui.Controllers
             List<Group3ServiceReference.ServiceStatusType> statuses = client.GetServiceStatusTypes().ToList();
             List<Group3ServiceReference.SubCategory> subCategories = client.GetSubCategories().ToList();
             List<Group3ServiceReference.ServiceType> serviceTypes = client.GetTypes().ToList();
+            List<Group3ServiceReference.Category> categories = client.GetCategories().ToList();
 
-            CreateServiceObject createServiceObject = new CreateServiceObject(statuses, subCategories, serviceTypes);
+            CreateServiceObject createServiceObject = new CreateServiceObject(statuses, subCategories, serviceTypes, categories);
             return View(createServiceObject);
         }
 
@@ -54,6 +55,7 @@ namespace finder_ui.Controllers
                 List<Group3ServiceReference.ServiceStatusType> statuses = client.GetServiceStatusTypes().ToList();
                 List<Group3ServiceReference.SubCategory> subCategories = client.GetSubCategories().ToList();
                 List<Group3ServiceReference.ServiceType> serviceTypes = client.GetTypes().ToList();
+                List<Group3ServiceReference.Category> categories = client.GetCategories().ToList();
 
                 // TODO: Add insert logic here
                 CreateServiceObject createServiceObject = new CreateServiceObject(
