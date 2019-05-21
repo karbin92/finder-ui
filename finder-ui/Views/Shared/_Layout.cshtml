@@ -35,25 +35,22 @@
     <br />
     <div class="line"> </div>
     <div class="header-bottom">
+        @Html.ActionLink("Hem", "Index", "Home")
+        @Html.ActionLink("Om oss", "About", "Home")
+        @Html.ActionLink("Kontakt", "Contact", "Home")
+        @Html.ActionLink("Skapa Konto", "Index", "Account")
 
-        @Html.ActionLink("Home", "//", "//")
+        @*@Html.ActionLink("Home", "//", "//")
         @Html.ActionLink("Profile", "//", "//")
         @Html.ActionLink("Messages", "//", "//")
-        @Html.ActionLink("Help", "//", "//")
+        @Html.ActionLink("Help", "//", "//")*@
 
     </div>
     <div class="line"> </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
-<div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        <li>@Html.ActionLink("About", "About", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-        <li>@Html.ActionLink("Skapa Konto", "Index", "Account") </li>
-    </ul>
-</div>
+
 
 
 
