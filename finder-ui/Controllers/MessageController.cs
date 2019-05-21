@@ -8,6 +8,7 @@ namespace finder_ui.Controllers
 {
     public class MessageController : Controller
     {//Will
+        //Test2
         // GET: Message
         public ActionResult Index()
         {
