@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using finder_ui.SessionHandler;
+using static finder_ui.SessionHandler.CustomAuthorization;
 
 namespace finder_ui.Controllers
 {
@@ -25,8 +27,14 @@ namespace finder_ui.Controllers
 
         // GET: Service/Create
         public ActionResult Create()
-        {
-            return View();
+        { 
+            List<Group3ServiceReference.ServiceStatusType> statuses = client.GetServiceStatusTypes().ToList();
+            List<Group3ServiceReference.SubCategory> subCategories = client.GetSubCategories().ToList();
+            List<Group3ServiceReference.ServiceType> serviceTypes = client.GetTypes().ToList();
+            List<Group3ServiceReference.Category> categories = client.GetCategories().ToList();
+
+            CreateServiceObject createServiceObject = new CreateServiceObject(statuses, subCategories, serviceTypes, categories);
+            return View(createServiceObject);
         }
 
         // POST: Service/Create
@@ -46,10 +54,17 @@ namespace finder_ui.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                List<Group3ServiceReference.ServiceStatusType> statuses = client.GetServiceStatusTypes().ToList();
+                List<Group3ServiceReference.SubCategory> subCategories = client.GetSubCategories().ToList();
+                List<Group3ServiceReference.ServiceType> serviceTypes = client.GetTypes().ToList();
+                List<Group3ServiceReference.Category> categories = client.GetCategories().ToList();
+
+                int.TryParse(Session["UserId"].ToString(), out int userid);
+ 
+
                 CreateServiceObject createServiceObject = new CreateServiceObject(
                     type,
-                    creatorId,
+                    userid,
                     serviceStatusId,
                     picture,
                     title,
@@ -63,50 +78,117 @@ namespace finder_ui.Controllers
                 client.CreateService(
                     createServiceObject.Type,
                     createServiceObject.CreatorId,
-                       createServiceObject.ServiceStatusId,
-                       createServiceObject.Picture,
-                       createServiceObject.Title,
-                       createServiceObject.Description,
-                       createServiceObject.Price,
-                       createServiceObject.StartDate,
-                       createServiceObject.EndDate,
-                       createServiceObject.TimeNeeded,
-                       createServiceObject.SubCategoryId);
+                    createServiceObject.ServiceStatusId,
+                    createServiceObject.Picture,
+                    createServiceObject.Title,
+                    createServiceObject.Description,
+                    createServiceObject.Price,
+                    createServiceObject.StartDate,
+                    createServiceObject.EndDate,
+                    createServiceObject.TimeNeeded,
+                    createServiceObject.SubCategoryId);
+
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return RedirectToAction("Error");
             }
         }
 
         // GET: Service/Edit/5
+        [CustomAuthorization]
         public ActionResult Edit(int id)
         {
-            
-            return View();
+            Group3ServiceReference.Service service = client.GetServiceById(id);
+            List<Group3ServiceReference.ServiceStatusType> statuses = client.GetServiceStatusTypes().ToList();
+            List<Group3ServiceReference.SubCategory> subCategories = client.GetSubCategories().ToList();
+            List<Group3ServiceReference.ServiceType> serviceTypes = client.GetTypes().ToList();
+    
+            EditServiceObject editService = new EditServiceObject(
+                service.Id,
+                service.ServiceType.Id,
+                service.ServiceStatus.Id,
+                service.Picture,
+                service.Title,
+                service.Description,
+                service.Price,
+                service.StartDate,
+                service.EndDate,
+                service.TimeNeeded,
+                service.SubCategory.Id,
+                statuses,
+                subCategories,
+                serviceTypes
+                );
+
+            return View(editService);
         }
 
         // POST: Service/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(
+            int id, 
+            int type,
+            int serviceStatusId,
+            string picture,
+            string title,
+            string description,
+            double price,
+            DateTime? startDate,
+            DateTime? endDate,
+            bool timeNeeded,
+            int subCategoryId)
         {
             try
             {
-                // TODO: Add update logic here
+                var x = subCategoryId;
+                bool editOk = 
+                client.EditService(
+                    id,
+                    type,
+                    serviceStatusId,
+                    picture,
+                    title,
+                    description,
+                    price,
+                    startDate,
+                    endDate,
+                    timeNeeded,
+                    subCategoryId); 
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return RedirectToAction("Error");
             }
         }
 
         // GET: Service/Delete/5
         public ActionResult Delete(int id)
         {
-            return View(client.GetServiceById(id));
+            try
+            {
+                int.TryParse(Session["UserId"].ToString(), out int userid);
+                var service = client.GetServiceById(id);
+
+                if (service.CreatorID == userid)
+                {
+                    return View(service);
+                }
+                else
+                {
+                    return RedirectToAction("Error");
+                }
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine("Ej inloggad" + e);
+                return RedirectToAction("Error");
+            }
+        
         }
 
         // POST: Service/Delete/5
@@ -115,15 +197,22 @@ namespace finder_ui.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
                 client.DeleteService(id);
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return RedirectToAction("Error");
             }
         }
+        
+        public ActionResult Error()
+        {
+            return View();
+        }
+
+
+
     }
 }
