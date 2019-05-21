@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1f18a6f5-b187-491f-ab54-46ad86cb9a67" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://193.10.202.82/messageservice/service1.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service13.xsd" MetadataType="Schema" ID="b7460c61-7ec3-4e55-8207-e16fa5289e8b" SourceId="1" SourceUrl="http://193.10.202.82/MessageService/service1.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service11.wsdl" MetadataType="Wsdl" ID="53c960f7-7d93-4a28-b21c-5ee9e3841019" SourceId="1" SourceUrl="http://193.10.202.82/MessageService/service1.svc?wsdl" />
+    <MetadataFile FileName="service131.xsd" MetadataType="Schema" ID="ffde2572-c82c-479e-b353-a5cb9d1f2d86" SourceId="1" SourceUrl="http://193.10.202.82/MessageService/service1.svc?xsd=xsd1" />
+    <MetadataFile FileName="service132.xsd" MetadataType="Schema" ID="a1327f65-1193-4171-a486-bb71cba09c5e" SourceId="1" SourceUrl="http://193.10.202.82/MessageService/service1.svc?xsd=xsd2" />
+    <MetadataFile FileName="service11.disco" MetadataType="Disco" ID="c4cec5b0-2e9d-4bd4-9999-3f88716116b0" SourceId="1" SourceUrl="http://193.10.202.82/MessageService/service1.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
