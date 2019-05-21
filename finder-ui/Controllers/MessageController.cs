@@ -43,7 +43,7 @@ namespace finder_ui.Controllers
             //IEnumerable<MeddelandeServiceReference.Messageinfo> messagelist = messageClient.GetMessages().ToList().Where(m => m.SendingUserId == 1);
             ViewBag.Lista = messagelist;
             ViewBag.annonsClient = adClient.GetAllServiceData();
-            return View();
+            return RedirectToAction("index","message");
         }
     }
 }
