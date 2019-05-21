@@ -7,7 +7,7 @@ using System.Web.Mvc;
 namespace finder_ui.Controllers
 {
     public class MessageController : Controller
-    {
+    {//Will
         // GET: Message
         public ActionResult Index()
         {
