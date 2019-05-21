@@ -14,20 +14,21 @@
             <h3 style="display:inline-block; margin-left:1%;">Inbox</h3>
         </div>
 
-        
-
-            @foreach (var item in annonsklient)
-            {
-
-                <button id="messagecontainer" class="messagecontainer" style="width:95%" href="@Html.ActionLink(".", "Index", new { user = 4, reciever = 4 })">
 
 
+
+        @foreach (var item in annonsklient)
+        {
+
+            <div class="messagecontainer">
+              
                     <p>@Html.DisplayFor(m => item.Title)</p>
                     <p>@Html.DisplayFor(m => item.CreatedTime)</p>
-                </button>
+                
 
+            </div>
 
-            }
+        }
 
         }
     </div>
