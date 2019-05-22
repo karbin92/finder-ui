@@ -152,6 +152,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\MessageServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\UserLoginServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -181,6 +186,16 @@
     <Compile Include="SessionHandler\CustomAuthorization.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Connected Services\MessageServiceReference\finder_ui.MessageServiceReference.Messageinfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\MessageServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\MessageServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\MessageServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\MessageServiceReference\service11.disco" />
     <Content Include="Connected Services\UserLoginServiceReference\finder_ui.UserLoginServiceReference.ReturnUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -199,6 +214,16 @@
     <Content Include="Connected Services\UserLoginServiceReference\finder_ui.UserLoginServiceReference.InterfaceBlockedUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\MessageServiceReference\Service11.wsdl" />
+    <None Include="Connected Services\MessageServiceReference\service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MessageServiceReference\service131.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MessageServiceReference\service132.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\UserLoginServiceReference\LoginService.disco" />
     <None Include="Connected Services\UserLoginServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\UserLoginServiceReference\configuration.svcinfo" />
@@ -318,10 +343,10 @@
     <Content Include="Views\Service\Create.cshtml" />
     <Content Include="Views\Service\Delete.cshtml" />
     <Content Include="Views\Service\Edit.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Message\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -340,6 +365,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\MessageServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\UserLoginServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\UserProfileServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\Group3ServiceReference\" />

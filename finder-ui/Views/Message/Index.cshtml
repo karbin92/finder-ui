@@ -1,0 +1,86 @@
+﻿@model finder_ui.MessageServiceReference.AddMessage
+
+*@{ IEnumerable<finder_ui.MessageServiceReference.Messageinfo> Lista = ViewBag.Lista;
+}
+@{IEnumerable<finder_ui.Group3ServiceReference.Service> annonsklient = ViewBag.annonsClient;
+}
+@{ 
+    IEnumerable<finder_ui.MessageServiceReference.Messageinfo> userMedd = ViewBag.userMedd;
+
+}
+
+@{
+    finder_ui.Group3ServiceReference.Service svar = ViewBag.annonsMessage;
+}
+@ViewBag.sessId; @*se sessionId ta bort sen*@
+
+<div class="outercontainer">
+    <div class="inboxcontainer">
+        <div class="inboxbanner">
+            <h3 style="display:inline-block; margin-left:1%;">Inbox</h3>
+        </div>
+
+
+
+
+            <div class="messagecontainer">
+
+                <p>@Html.DisplayFor(m => svar.Title)</p>
+                <p>@Html.DisplayFor(m => svar.CreatedTime)</p>
+            </div>
+        
+
+
+    </div>
+    <div class="line"></div>
+
+    <div>
+        <div class="activemessagecontainer">
+            <div class="activemessagebanner">
+                <h3 style="display:inline-block; margin-left:1%;">username</h3>
+
+
+            </div>
+
+            @foreach (var item in userMedd)
+            {
+
+                <div class="activemessage messagecontainer">
+                    <p style="float:left;">@Html.DisplayFor(m => item.Message)</p>
+
+
+                    <hr width="90%">
+                </div>
+            }
+        </div>
+        <textarea style="margin-top:2%;" class="answerbox" name="subject" placeholder="Write something.."></textarea>
+        <br />
+        <br />
+        <button type="submit">Skapa kontakt</button>
+    </div>
+
+
+</div>
+under här är det som var innan test
+<div>
+
+    @using (Html.BeginForm())
+    {
+
+
+        @Html.LabelFor(model => model.RecievingUserId)<br />
+        @Html.EditorFor(model => model.RecievingUserId)<br />
+
+        @Html.LabelFor(model => model.Message)<br />
+        @Html.EditorFor(model => model.Message)<br />
+
+        @Html.LabelFor(model => model.ServiceId)<br />
+        @Html.EditorFor(model => model.ServiceId)<br />
+
+        @Html.LabelFor(model => model.ServiceTitle)<br />
+        @Html.EditorFor(model => model.ServiceTitle)<br />
+
+        <input type="submit" value="Skicka meddelande" />
+    }
+
+</div>
