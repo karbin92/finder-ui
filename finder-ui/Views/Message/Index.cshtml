@@ -1,13 +1,18 @@
 ﻿@model finder_ui.MessageServiceReference.AddMessage
+
 *@{ IEnumerable<finder_ui.MessageServiceReference.Messageinfo> Lista = ViewBag.Lista;
 }
 @{IEnumerable<finder_ui.Group3ServiceReference.Service> annonsklient = ViewBag.annonsClient;
 }
+@{ 
+    IEnumerable<finder_ui.MessageServiceReference.Messageinfo> userMedd = ViewBag.userMedd;
+
+}
 
 @{
-    IEnumerable<finder_ui.MessageServiceReference.Messageinfo> userMedd = ViewBag.userMedd;
+    finder_ui.Group3ServiceReference.Service svar = ViewBag.annonsMessage;
 }
-@ViewBag.sessId;
+@ViewBag.sessId; @*se sessionId ta bort sen*@
 
 <div class="outercontainer">
     <div class="inboxcontainer">
@@ -18,14 +23,12 @@
 
 
 
-        @foreach (var item in annonsklient)
-        {
             <div class="messagecontainer">
 
-                <p>@Html.DisplayFor(m => item.Title)</p>
-                <p>@Html.DisplayFor(m => item.CreatedTime)</p>
+                <p>@Html.DisplayFor(m => svar.Title)</p>
+                <p>@Html.DisplayFor(m => svar.CreatedTime)</p>
             </div>
-        }
+        
 
 
     </div>

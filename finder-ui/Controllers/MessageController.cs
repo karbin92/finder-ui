@@ -16,33 +16,30 @@ namespace finder_ui.Controllers
 
         public ActionResult Index()
         {
-
-
-            IEnumerable<MessageServiceReference.Messageinfo> messageList = messageClient.GetMessages().ToList();
-
             int sessId = Convert.ToInt32(Session["UserId"]);
+            IEnumerable<MessageServiceReference.Messageinfo> messageList = messageClient.GetMessages().ToList();
+            
+            
             //viewbag testa sessionId
-            ViewBag.sessId = Session["UserID"];
+            //ViewBag.sessId = Session["UserID"];
 
-            //viewbag messagelist och annonsclient måste visas på båda metoderna för att visas upp i samma vy
             ViewBag.userMedd = messageClient.GetUserMessage(sessId);
             ViewBag.Lista = messageList;
-            ViewBag.annonsClient = adClient.GetAllServiceData();
+            //ViewBag.annonsClient = adClient.AdvancedSearch(sessId);
+            //Group3ServiceReference.Service svar = adClient.GetServiceById(7);
             ViewBag.annonsMessage = adClient.GetServiceById(7);
-            return View();
+            
+                        return View();
         }
 
         [HttpPost]
         public ActionResult Index(MessageServiceReference.AddMessage newMessage)
         {
-            //viewbag messagelist och annonsclient måste visas på båda metoderna för att visas upp i samma vy
             MessageServiceReference.Service1Client messageClient = new MessageServiceReference.Service1Client();
             int sessId = Convert.ToInt32(Session["UserId"]);
             messageClient.AddMessage(newMessage, sessId);
             IEnumerable<MessageServiceReference.Messageinfo> messagelist = messageClient.GetMessages().ToList();
-            //IEnumerable<MeddelandeServiceReference.Messageinfo> messagelist = messageClient.GetMessages().ToList().Where(m => m.SendingUserId == 1);
             ViewBag.Lista = messagelist;
-            ViewBag.annonsClient = adClient.GetAllServiceData();
             return RedirectToAction("index","message");
         }
     }
