@@ -10,9 +10,11 @@ namespace finder_ui.Controllers
     //[Authorize]
     [CustomAuthorization]
     public class MessageController : Controller
+
     {
         MessageServiceReference.Service1Client messageClient = new MessageServiceReference.Service1Client();
         Group3ServiceReference.Service1Client adClient = new Group3ServiceReference.Service1Client();
+
 
         public ActionResult Index()
         {
