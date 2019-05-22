@@ -338,10 +338,10 @@ namespace finder_ui.MessageServiceReference {
         System.Threading.Tasks.Task<finder_ui.MessageServiceReference.Messageinfo[]> GetMessagesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddMessage", ReplyAction="http://tempuri.org/IService1/AddMessageResponse")]
-        void AddMessage(finder_ui.MessageServiceReference.AddMessage newMessage);
+        void AddMessage(finder_ui.MessageServiceReference.AddMessage newMessage, int sendingId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddMessage", ReplyAction="http://tempuri.org/IService1/AddMessageResponse")]
-        System.Threading.Tasks.Task AddMessageAsync(finder_ui.MessageServiceReference.AddMessage newMessage);
+        System.Threading.Tasks.Task AddMessageAsync(finder_ui.MessageServiceReference.AddMessage newMessage, int sendingId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserMessage", ReplyAction="http://tempuri.org/IService1/GetUserMessageResponse")]
         finder_ui.MessageServiceReference.Messageinfo[] GetUserMessage(int id1);
@@ -391,12 +391,12 @@ namespace finder_ui.MessageServiceReference {
             return base.Channel.GetMessagesAsync();
         }
         
-        public void AddMessage(finder_ui.MessageServiceReference.AddMessage newMessage) {
-            base.Channel.AddMessage(newMessage);
+        public void AddMessage(finder_ui.MessageServiceReference.AddMessage newMessage, int sendingId) {
+            base.Channel.AddMessage(newMessage, sendingId);
         }
         
-        public System.Threading.Tasks.Task AddMessageAsync(finder_ui.MessageServiceReference.AddMessage newMessage) {
-            return base.Channel.AddMessageAsync(newMessage);
+        public System.Threading.Tasks.Task AddMessageAsync(finder_ui.MessageServiceReference.AddMessage newMessage, int sendingId) {
+            return base.Channel.AddMessageAsync(newMessage, sendingId);
         }
         
         public finder_ui.MessageServiceReference.Messageinfo[] GetUserMessage(int id1) {

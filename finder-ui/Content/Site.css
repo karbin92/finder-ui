@@ -1,7 +1,6 @@
 ﻿
 /* Set padding to keep content from hitting the edges */
-.body-content {
-}
+
 
 .header {
     overflow: hidden;
@@ -54,7 +53,7 @@
     }
 }
 
-.line {
+.line2 {
     height: 2px;
     background-color: dimgray;
     overflow: hidden;
@@ -122,6 +121,7 @@
     height: 90px;
     width: auto;
     overflow: auto;
+    margin-top: 3.5%;
 }
 
     .footer .logo1 {
@@ -129,6 +129,8 @@
         margin-left: auto;
         margin-right: auto;
     }
+/*FredriksCSS*/
+
 .outercontainer {
     background-color: #f1f1f1;
     display: grid;
@@ -146,12 +148,13 @@
 
 .inboxcontainer {
     background-color: #414040;
-    margin-left: 15%;
-    margin-top: 5%;
+    margin-left: 40%;
     padding-bottom: 10px;
     overflow: scroll;
-    height: 93%;
+    max-height: 500px;
     position: relative;
+    max-width: 600px;
+    max-height: 500px;
 }
 
 .messagecontainer {
@@ -162,6 +165,8 @@
     margin: 10px 10px 10px;
     overflow: auto;
     position: relative;
+    max-width: 600px;
+    max-height: 500px;
 }
 
 .darker {
@@ -171,12 +176,11 @@
 
 .messagecontainer::after {
     content: '';
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
-    mix-blend-mode: screen;
 }
 
 
@@ -184,16 +188,18 @@
     background-color: white;
     border-color: #a3a6a6;
     margin-right: 15%;
-    margin-top: 5%;
-    margin-left: 0%;
+    max-width: 600px;
+    max-height: 500px;
     overflow: scroll;
     height: 75%;
     position: relative;
+    padding-bottom: 10px;
 }
 
 .activemessagebanner {
     background-color: #019900;
     color: white;
+    position: relative;
 }
 
 .activemessage {
@@ -206,17 +212,18 @@
     border: 2px solid;
     border-color: #a6a6a6;
     height: 50%;
-    margin-top: 150px;
-    width: 0px;
+    margin-top: 105px;
 }
 
 .answerbox {
     background-color: white;
-    border-color: #d9d9d9;
+    border-color: #d1d9d9;
     width: 84%;
     margin-left: 0%;
     resize: none;
     position: relative;
+    max-width: 600px;
+    max-height: 500px;
 }
 
 button {
@@ -230,6 +237,8 @@ button {
     height: 44px;
     border: 1px solid;
     border-width: 1px 1px 3px;
+    max-width: 600px;
+    max-height: 500px;
 }
 
 .empty {
@@ -237,16 +246,6 @@ button {
 }
 
 
-.footer {
-    position: relative;
-    bottom: 0;
-    height: 60px;
-    margin-top: 40px;
-    text-align: center;
-    font-size: 10px;
-    font-family: 'Lato';
-    background-color: dimgray;
-}
 
 .bodyStyle {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -417,3 +416,10 @@ imgg {
     max-width: 100%;
 }
 
+.navbarr {
+    position: relative;
+    z-index: 1000;
+    height: 50%;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
