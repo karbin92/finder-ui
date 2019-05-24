@@ -9,8 +9,16 @@ namespace finder_ui.Controllers
 {
     public class HomeController : Controller
     {
+       
         public ActionResult Index()
         {
+            return View();
+        }
+        public ActionResult Searching(string sok)
+        {
+
+            
+
             return View();
         }
 

@@ -14,7 +14,7 @@ namespace finder_ui.Controllers
     {
         MessageServiceReference.Service1Client messageClient = new MessageServiceReference.Service1Client();
         Group3ServiceReference.Service1Client adClient = new Group3ServiceReference.Service1Client();
-
+        
 
         public ActionResult Index()
         {
@@ -47,5 +47,6 @@ namespace finder_ui.Controllers
             ViewBag.annonsClient = adClient.GetAllServiceData();
             return RedirectToAction("index","message");
         }
+       
     }
 }

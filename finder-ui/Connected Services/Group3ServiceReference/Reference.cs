@@ -1565,5 +1565,10 @@ namespace finder_ui.Group3ServiceReference {
         public System.Threading.Tasks.Task<bool> DeleteServiceAsync(int id) {
             return base.Channel.DeleteServiceAsync(id);
         }
+
+        internal dynamic Search()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
