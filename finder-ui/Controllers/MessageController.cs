@@ -14,24 +14,58 @@ namespace finder_ui.Controllers
     {
         MessageServiceReference.Service1Client messageClient = new MessageServiceReference.Service1Client();
         Group3ServiceReference.Service1Client adClient = new Group3ServiceReference.Service1Client();
+        UserLoginServiceReference.LoginServiceClient getUsers = new UserLoginServiceReference.LoginServiceClient();
 
 
         public ActionResult Index()
         {
-            int sessId = Convert.ToInt32(Session["UserId"]);
+            int sessId = Convert.ToInt32(Session["UserId"]); //parsar sessionId till int
             IEnumerable<MessageServiceReference.Messageinfo> messageList = messageClient.GetMessages().ToList();
             
             
             //viewbag testa sessionId
             //ViewBag.sessId = Session["UserID"];
 
-            ViewBag.userMedd = messageClient.GetUserMessage(sessId);
+            ViewBag.userMedd = messageClient.GetUserMessage(sessId); //hämtar ens egna meddelanden
             ViewBag.Lista = messageList;
-            //ViewBag.annonsClient = adClient.AdvancedSearch(sessId);
-            //Group3ServiceReference.Service svar = adClient.GetServiceById(7);
-            ViewBag.annonsMessage = adClient.GetServiceById(7);
-            
-                        return View();
+
+            //ViewBag.annonsClient = adClient.AdvancedSearch(sessId); //funkar inte att skicka in id, måste skicka in 10 parametrar???
+
+            //Group3ServiceReference.Service svar = adClient.GetServiceById(7); Jan olof  försök
+            ViewBag.annonsMessage = adClient.GetServiceById(7); //hämtar service 7
+            ViewBag.getUsers = getUsers.GetActiveUsers().ToList();
+            ViewBag.getUser = getUsers.GetActiveUsers();
+
+            ViewBag.test = getUsers.GetActiveUsers().Where(x => x.ID == sessId).ToList(); // test ger info om specifik active user
+
+            IEnumerable<Group3ServiceReference.Service> services = adClient.AdvancedSearch
+(
+/* 
+                     * Signatur: 
+                     * DateRange createdTime, 
+                     * DateRange startDate, 
+                     * DateRange endDate, 
+                     * int creatorId, 
+                     * string title, 
+                     * string description, 
+                     * PriceRange price,
+                     * int serviceStatusId, 
+                     * List< int > serviceTypeIds, 
+                     * List<int> subCategoryIds
+                     * */
+                    new Group3ServiceReference.DateRange(),
+new Group3ServiceReference.DateRange(),
+new Group3ServiceReference.DateRange(),
+sessId,
+null, // Titel
+                    null,
+new Group3ServiceReference.PriceRange(),
+0,  // <--- Det här är status
+                    new List<int>().ToArray(),
+new List<int>().ToArray()
+)
+.ToList();
+            return View();
         }
 
         [HttpPost]
