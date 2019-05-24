@@ -1,14 +1,25 @@
 ﻿@model finder_ui.MessageServiceReference.AddMessage
-*@{ IEnumerable<finder_ui.MessageServiceReference.Messageinfo> Lista = ViewBag.Lista;
+
+@{ IEnumerable<finder_ui.MessageServiceReference.Messageinfo> Lista = ViewBag.Lista; //ger lista av alla meddelanden
 }
-@{IEnumerable<finder_ui.Group3ServiceReference.Service> annonsklient = ViewBag.annonsClient;
+@{IEnumerable<finder_ui.Group3ServiceReference.Service> annonsklient = ViewBag.annonsClient; //här är model till när man tar emot från advanced search funkar ej för tillfället
+}
+@{
+    IEnumerable<finder_ui.MessageServiceReference.Messageinfo> userMedd = ViewBag.userMedd; //visar upp anvnändarens meddelanden
+
 }
 
 
 @{
-    IEnumerable<finder_ui.MessageServiceReference.Messageinfo> userMedd = ViewBag.userMedd;
+    finder_ui.Group3ServiceReference.Service svar = ViewBag.annonsMessage; //ger service från endast den user man skickar in i hårdkodad controller för tillfället
 }
-@ViewBag.sessId;
+@{
+    IEnumerable<finder_ui.UserLoginServiceReference.InterfaceUser> returnUsers = ViewBag.getUsers; //försök till dropdownlist för att få fram recievinguserid
+}
+@{ 
+    IEnumerable<finder_ui.UserLoginServiceReference.InterfaceUser> test = ViewBag.test; //ger info från specifik user (försökt ill recievinguserId)
+}
+@ViewBag.sessId @*se sessionId ta bort sen*@
 
 <div class="outercontainer">
     <div class="inboxcontainer">
@@ -19,14 +30,20 @@
 
 
 
-        @foreach (var item in annonsklient)
-        {
-            <div class="messagecontainer">
+        <div class="messagecontainer">
 
-                <p>@Html.DisplayFor(m => item.Title)</p>
-                <p>@Html.DisplayFor(m => item.CreatedTime)</p>
-            </div>
+            <p>@Html.DisplayFor(m => svar.Title)</p>
+            <p>@Html.DisplayFor(m => svar.CreatedTime)</p>
+        </div>
+        @foreach (var item in test)
+        {
+        <p>
+            @Html.DisplayFor(m => item.ID)
+        </p>
+           
+
         }
+
 
 
     </div>
@@ -74,6 +91,7 @@
 
         @Html.LabelFor(model => model.RecievingUserId)<br />
         @Html.EditorFor(model => model.RecievingUserId)<br />
+        
 
         @Html.LabelFor(model => model.Message)<br />
         @Html.EditorFor(model => model.Message)<br />
@@ -84,7 +102,17 @@
         @Html.LabelFor(model => model.ServiceTitle)<br />
         @Html.EditorFor(model => model.ServiceTitle)<br />
 
+
+
+
         <input type="submit" value="Skicka meddelande" />
     }
 
+
 </div>
+
+@*@Html.LabelFor(model => returnUsers, "reciever", htmlAttributes: new { @class = "control-label col-md-2" })
+
+    @Html.DropDownList("", null, htmlAttributes: new { @class = "form-control" })
+    @Html.ValidationMessageFor(model => returnUsers, "", new { @class = "text-danger" })*@
+
