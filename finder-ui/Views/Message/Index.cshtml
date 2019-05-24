@@ -9,6 +9,7 @@
 
 }
 
+
 @{
     finder_ui.Group3ServiceReference.Service svar = ViewBag.annonsMessage; //ger service från endast den user man skickar in i hårdkodad controller för tillfället
 }
@@ -52,7 +53,13 @@
         <div class="activemessagecontainer">
             <div class="activemessagebanner">
                 <h3 style="display:inline-block; margin-left:1%;">username</h3>
+                <input type="button" style="margin-left:50%; background-color:orangered;
+                    font-weight:bold; color:white; border-radius: 12px;"
+                       value="Skapa kontrakt"
+                       onclick="location.href='@Url.Action("Action", "Controller")'" />
 
+                @*<button>@Html.ActionLink("Skapa Kontrakt", "Create", "Service", new { serviceId=Model.ServiceId , counterpartId=Model.RecievingUserId,
+                    serviceOwnerId =Model.SendingUserId, contractCreatorId=Model.Id })</button>*@
 
             </div>
 
@@ -70,12 +77,12 @@
         <textarea style="margin-top:2%;" class="answerbox" name="subject" placeholder="Write something.."></textarea>
         <br />
         <br />
-        <button type="submit">Skapa kontakt</button>
+        <button type="submit">Send</button>
     </div>
 
 
 </div>
-under här är det som var innan test
+    under här är det som var innan test
 <div>
 
     @using (Html.BeginForm())

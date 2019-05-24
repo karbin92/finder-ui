@@ -14,8 +14,8 @@ namespace finder_ui.Controllers
     {
         MessageServiceReference.Service1Client messageClient = new MessageServiceReference.Service1Client();
         Group3ServiceReference.Service1Client adClient = new Group3ServiceReference.Service1Client();
-        UserLoginServiceReference.LoginServiceClient getUsers = new UserLoginServiceReference.LoginServiceClient();
 
+        UserLoginServiceReference.LoginServiceClient getUsers = new UserLoginServiceReference.LoginServiceClient();
 
         public ActionResult Index()
         {
@@ -80,5 +80,6 @@ new List<int>().ToArray()
             ViewBag.Lista = messagelist;
             return RedirectToAction("index","message");
         }
+       
     }
 }
