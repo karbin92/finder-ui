@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Finder</title>
+    <LINK REL="SHORTCUT ICON"
+          HREF="~/Content/Images/findericon.png">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="header">
+        <img alt="Finder" src="//i.imgur.com/YHlSO2T.png" style="max-width: 100% ;
+         min-height: 53px ; cursor:pointer" onclick="window.location = '/';" />
+    </div>
+
+
+
+
+
+    <br />
+    <div class="line2"> </div>
+    <div class="header-bottom">
+
+        @{
+            if (Session["AdminIsLoggedIn"] != null)
+            {
+                @Html.ActionLink("Logga ut", "SignOut", "Home")
+            }
+            else
+            {
+                @Html.ActionLink("Logga in", "LogInAdmin", "Home")
+            }
+        }
+
+    </div>
+    <div class="line2"> </div>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <div class="footer">
+        <img class="logo1" src="~/Content/Images/finderlogo.png" height="90">
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

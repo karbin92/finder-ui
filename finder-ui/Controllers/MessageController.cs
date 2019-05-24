@@ -37,6 +37,36 @@ namespace finder_ui.Controllers
             ViewBag.getUser = getUsers.GetActiveUsers();
 
             ViewBag.test = getUsers.GetActiveUsers().Where(x => x.ID == sessId).ToList(); // test ger info om specifik active user
+
+
+            IEnumerable<Group3ServiceReference.Service> services = adClient.AdvancedSearch
+(
+/* 
+                     * Signatur: 
+                     * DateRange createdTime, 
+                     * DateRange startDate, 
+                     * DateRange endDate, 
+                     * int creatorId, 
+                     * string title, 
+                     * string description, 
+                     * PriceRange price,
+                     * int serviceStatusId, 
+                     * List< int > serviceTypeIds, 
+                     * List<int> subCategoryIds
+                     * */
+                    new Group3ServiceReference.DateRange(),
+new Group3ServiceReference.DateRange(),
+new Group3ServiceReference.DateRange(),
+sessId,
+null, // Titel
+                    null,
+new Group3ServiceReference.PriceRange(),
+0,  // <--- Det här är status
+                    new List<int>().ToArray(),
+new List<int>().ToArray()
+)
+.ToList();
+
             return View();
         }
 
