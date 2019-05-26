@@ -6,7 +6,7 @@
 @{ IEnumerable<MessageAdminProject.MeddelandeServiceReference.Messageinfo> Lista = ViewBag.Lista;
 }
 <div>
-    @ViewBag.HelloMsg
+    <br/>
     <table border="1">
         <tr>
             <td>@Html.DisplayNameFor(m => m.Id)</td>
@@ -34,7 +34,6 @@
                 <td>@Html.DisplayFor(m => item.UserPicture)</td>
                 <td>@Html.ActionLink("Radera", "DeleteMessage", new { id = item.Id })</td>
             </tr>
-            <hr width="90%">
         }
     </table>
 </div>
