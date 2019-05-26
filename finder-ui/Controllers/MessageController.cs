@@ -24,7 +24,7 @@ namespace finder_ui.Controllers
             
 
             ViewBag.userMedd = messageClient.GetUserMessage(sessId); //hämtar ens egna meddelanden
-            ViewBag.Lista = messageList;
+            ViewBag.Lista = messageList.Where(x=>x.SendingUserId==sessId);// visar lista på endast egna meddelanden
 
             //ViewBag.annonsClient = adClient.AdvancedSearch(sessId); //funkar inte att skicka in id, måste skicka in 10 parametrar???
 

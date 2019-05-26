@@ -1373,14 +1373,11 @@ namespace finder_ui.Group3ServiceReference {
         public bool IsAlive() {
             return base.Channel.IsAlive();
         }
-        
-        public System.Threading.Tasks.Task<bool> IsAliveAsync() {
+
+        public System.Threading.Tasks.Task<bool> IsAliveAsync()
+        {
             return base.Channel.IsAliveAsync();
 
-
-        internal dynamic Search()
-        {
-            throw new NotImplementedException();
 
         }
     }
