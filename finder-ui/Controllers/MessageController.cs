@@ -22,9 +22,6 @@ namespace finder_ui.Controllers
             int sessId = Convert.ToInt32(Session["UserId"]); //parsar sessionId till int
             IEnumerable<MessageServiceReference.Messageinfo> messageList = messageClient.GetMessages().ToList();
             
-            
-            //viewbag testa sessionId
-            //ViewBag.sessId = Session["UserID"];
 
             ViewBag.userMedd = messageClient.GetUserMessage(sessId); //hämtar ens egna meddelanden
             ViewBag.Lista = messageList;
@@ -39,33 +36,33 @@ namespace finder_ui.Controllers
             ViewBag.test = getUsers.GetActiveUsers().Where(x => x.ID == sessId).ToList(); // test ger info om specifik active user
 
 
-            IEnumerable<Group3ServiceReference.Service> services = adClient.AdvancedSearch
-(
-/* 
-                     * Signatur: 
-                     * DateRange createdTime, 
-                     * DateRange startDate, 
-                     * DateRange endDate, 
-                     * int creatorId, 
-                     * string title, 
-                     * string description, 
-                     * PriceRange price,
-                     * int serviceStatusId, 
-                     * List< int > serviceTypeIds, 
-                     * List<int> subCategoryIds
-                     * */
-                    new Group3ServiceReference.DateRange(),
-new Group3ServiceReference.DateRange(),
-new Group3ServiceReference.DateRange(),
-sessId,
-null, // Titel
-                    null,
-new Group3ServiceReference.PriceRange(),
-0,  // <--- Det här är status
-                    new List<int>().ToArray(),
-new List<int>().ToArray()
-)
-.ToList();
+//            IEnumerable<Group3ServiceReference.Service> services = adClient.AdvancedSearch
+//(
+///* 
+//                     * Signatur: 
+//                     * DateRange createdTime, 
+//                     * DateRange startDate, 
+//                     * DateRange endDate, 
+//                     * int creatorId, 
+//                     * string title, 
+//                     * string description, 
+//                     * PriceRange price,
+//                     * int serviceStatusId, 
+//                     * List< int > serviceTypeIds, 
+//                     * List<int> subCategoryIds
+//                     * */
+//                    new Group3ServiceReference.DateRange(),
+//new Group3ServiceReference.DateRange(),
+//new Group3ServiceReference.DateRange(),
+//sessId,
+//null, // Titel
+//                    null,
+//new Group3ServiceReference.PriceRange(),
+//0,  // <--- Det här är status
+//                    new List<int>().ToArray(),
+//new List<int>().ToArray()
+//)
+//.ToList();
 
             return View();
         }
