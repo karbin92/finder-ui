@@ -33,7 +33,7 @@
                 <td>@Html.DisplayFor(m => item.ServiceTitle)</td>
                 <td>@Html.DisplayFor(m => item.Time)</td>
                 <td>@Html.DisplayFor(m => item.UserPicture)</td>
-                <td>@Html.ActionLink("Radera", "DeleteMessage", new { id = item.Id })</td>
+                <td><button style="background-color: limegreen">@Html.ActionLink("Radera", "DeleteMessage", new { id = item.Id })</button></td>
             </tr>
         }
     </table>

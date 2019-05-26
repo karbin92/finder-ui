@@ -5,8 +5,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    margin-left:auto;
-    margin-right:auto;
+    
 }
 
     #meddelanden td, #customers th {
@@ -315,7 +314,6 @@ button {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    -o-user-select: none;
     user-select: none;
 }
 
@@ -338,6 +336,10 @@ ul, li {
 
 a {
     text-decoration: none;
+    color:whitesmoke;
+}
+a:hover{
+    color: black;
 }
 
 .profile-wrapper {
