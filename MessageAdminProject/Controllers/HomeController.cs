@@ -24,7 +24,7 @@ namespace MessageAdminProject.Controllers
         public ActionResult LogInAdmin(LogInClass model)
         {
             AdminLogInServiceReference.LoginServiceClient client = new AdminLogInServiceReference.LoginServiceClient();
-            bool UserOk = client.ModeratorLogin(model.adminUserame, model.adminPassword);
+            bool UserOk = client.AdminLogin(model.adminUserame, model.adminPassword);
             if (UserOk == true)
             {
                 Session["AdminIsLoggedIn"] = true;

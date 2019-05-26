@@ -55,17 +55,17 @@ namespace finder_ui.Controllers
                      * List<int> subCategoryIds
                      * */
                     new Group3ServiceReference.DateRange(),
-new Group3ServiceReference.DateRange(),
-new Group3ServiceReference.DateRange(),
-sessId,
-null, // Titel
-                    null,
-new Group3ServiceReference.PriceRange(),
-0,  // <--- Det här är status
-                    new List<int>().ToArray(),
-new List<int>().ToArray()
-)
-.ToList();
+                    new Group3ServiceReference.DateRange(),
+                    new Group3ServiceReference.DateRange(),
+                    sessId,
+                    null, // Titel
+                                        null,
+                    new Group3ServiceReference.PriceRange(),
+                    0,  // <--- Det här är status
+                                        new List<int>().ToArray(),
+                    new List<int>().ToArray()
+                    )
+                    .ToList();
 
             return View();
         }

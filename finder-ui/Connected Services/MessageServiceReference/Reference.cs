@@ -354,6 +354,12 @@ namespace finder_ui.MessageServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteMessage", ReplyAction="http://tempuri.org/IService1/DeleteMessageResponse")]
         System.Threading.Tasks.Task DeleteMessageAsync(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IsAlive", ReplyAction="http://tempuri.org/IService1/IsAliveResponse")]
+        bool IsAlive();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IsAlive", ReplyAction="http://tempuri.org/IService1/IsAliveResponse")]
+        System.Threading.Tasks.Task<bool> IsAliveAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -413,6 +419,14 @@ namespace finder_ui.MessageServiceReference {
         
         public System.Threading.Tasks.Task DeleteMessageAsync(int Id) {
             return base.Channel.DeleteMessageAsync(Id);
+        }
+        
+        public bool IsAlive() {
+            return base.Channel.IsAlive();
+        }
+        
+        public System.Threading.Tasks.Task<bool> IsAliveAsync() {
+            return base.Channel.IsAliveAsync();
         }
     }
 }
