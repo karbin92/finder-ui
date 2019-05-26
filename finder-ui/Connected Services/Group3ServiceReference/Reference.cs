@@ -1368,6 +1368,7 @@ namespace finder_ui.Group3ServiceReference {
         public System.Threading.Tasks.Task<bool> DeleteServiceAsync(int id) {
             return base.Channel.DeleteServiceAsync(id);
         }
+
         
         public bool IsAlive() {
             return base.Channel.IsAlive();
@@ -1375,6 +1376,12 @@ namespace finder_ui.Group3ServiceReference {
         
         public System.Threading.Tasks.Task<bool> IsAliveAsync() {
             return base.Channel.IsAliveAsync();
+
+
+        internal dynamic Search()
+        {
+            throw new NotImplementedException();
+
         }
     }
 }

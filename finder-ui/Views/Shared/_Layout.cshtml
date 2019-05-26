@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -13,8 +14,11 @@
     <div class="header">
         <img alt="Finder" src="//i.imgur.com/YHlSO2T.png" style="max-width: 100% ;
          min-height: 53px ; cursor:pointer" onclick="window.location = '/';" />
-        <input type="text" placeholder="  Search..">
-        <input type="submit" value="Search" />
+        @using (Html.BeginForm("Searching", "Home", FormMethod.Post))
+        {
+            <input type="text" placeholder="  Search..">
+            <input type="submit" value="Search" />
+        }
 
         <div class="dropdown">
 
@@ -33,18 +37,21 @@
 
 
     <br />
-    <div class="line"> </div>
+    <div class="line2"> </div>
     <div class="header-bottom">
+
 
 
         @Html.ActionLink("Hem", "Index", "Home")
         @Html.ActionLink("Om oss", "About", "Home")
-        @Html.ActionLink("Kontakt", "Contact", "Home")
-        @Html.ActionLink("Chat", "Index", "Message")
+        @Html.ActionLink("Profile", "Index", "UserProfile")
+        @Html.ActionLink("Messages", "Index", "Message")
         @Html.ActionLink("Skapa Konto", "Index", "Account")
+        @Html.ActionLink("Help", "//", "//")
+
 
     </div>
-    <div class="line"> </div>
+    <div class="line2"> </div>
     <div class="container body-content">
         @RenderBody()
         <hr />

@@ -9,73 +9,85 @@
 
 }
 
+
 @{
     finder_ui.Group3ServiceReference.Service svar = ViewBag.annonsMessage; //ger service från endast den user man skickar in i hårdkodad controller för tillfället
 }
 @{
     IEnumerable<finder_ui.UserLoginServiceReference.InterfaceUser> returnUsers = ViewBag.getUsers; //försök till dropdownlist för att få fram recievinguserid
 }
-@{ 
+@{
     IEnumerable<finder_ui.UserLoginServiceReference.InterfaceUser> test = ViewBag.test; //ger info från specifik user (försökt ill recievinguserId)
 }
-@ViewBag.sessId @*se sessionId ta bort sen*@
-
-<div class="outercontainer">
-    <div class="inboxcontainer">
-        <div class="inboxbanner">
-            <h3 style="display:inline-block; margin-left:1%;">Inbox</h3>
-        </div>
-
-
-
-
-        <div class="messagecontainer">
-
-            <p>@Html.DisplayFor(m => svar.Title)</p>
-            <p>@Html.DisplayFor(m => svar.CreatedTime)</p>
-        </div>
-        @foreach (var item in test)
-        {
-        <p>
-            @Html.DisplayFor(m => item.ID)
-        </p>
-           
-
-        }
-
-
-
-    </div>
-    <div class="line"></div>
-
-    <div>
-        <div class="activemessagecontainer">
-            <div class="activemessagebanner">
-                <h3 style="display:inline-block; margin-left:1%;">username</h3>
-
-
+@foreach (var item in test)
+{
+    <p>
+        @Html.DisplayFor(m => item.ID)
+    </p>
+}
+    <div class="outercontainer">
+        <div class="inboxcontainer">
+            <div class="inboxbanner">
+                <h3 style="display:inline-block; margin-left:1%;">Inbox</h3>
             </div>
 
-            @foreach (var item in userMedd)
-            {
-
-                <div class="activemessage messagecontainer">
-                    <p style="float:left;">@Html.DisplayFor(m => item.Message)</p>
 
 
-                    <hr width="90%">
-                </div>
+
+            <div class="messagecontainer">
+
+                <p>@Html.DisplayFor(m => svar.Title)</p>
+                <p>@Html.DisplayFor(m => svar.CreatedTime)</p>
+            </div>
+
+
+
             }
+
+
+
         </div>
-        <textarea style="margin-top:2%;" class="answerbox" name="subject" placeholder="Write something.."></textarea>
-        <br />
-        <br />
-        <button type="submit">Skapa kontakt</button>
+        <div class="line"></div>
+
+        <div>
+            <div class="activemessagecontainer">
+                <div class="activemessagebanner">
+                    <h3 style="display:inline-block; margin-left:1%;">username</h3>
+                    <input type="button" style="margin-left:50%; background-color:orangered;
+                    font-weight:bold; color:white; border-radius: 12px;"
+                           value="Skapa kontrakt"
+                           onclick="location.href='@Url.Action("Action", "Controller")'" />
+
+                    @*<button>@Html.ActionLink("Skapa Kontrakt", "Create", "Service", new { serviceId=Model.ServiceId , counterpartId=Model.RecievingUserId,
+                        serviceOwnerId =Model.SendingUserId, contractCreatorId=Model.Id })</button>*@
+
+                </div>
+
+                @foreach (var item in userMedd)
+                {
+
+                    <div class="activemessage messagecontainer">
+                        <p style="float:left;">@Html.DisplayFor(m => item.Message)</p>
+                        <p>@Html.DisplayFor(m => item.RecievingUserId)</p>
+                        <p>@Html.DisplayFor(m => item.SendingUserId)</p>
+                        <p>@Html.DisplayFor(m => item.SendingUserId)</p>
+
+
+
+
+                        <hr width="90%">
+                    </div>
+                }
+            </div>
+            <textarea style="margin-top:2%;" class="answerbox" name="subject" placeholder="Write something.."></textarea>
+            <br />
+            <br />
+            <button type="submit">Send</button>
+        </div>
+
+
     </div>
-
-
-</div>
-under här är det som var innan test
+    //detta tas bort sen, måste införas ovan
 <div>
 
     @using (Html.BeginForm())
@@ -84,7 +96,7 @@ under här är det som var innan test
 
         @Html.LabelFor(model => model.RecievingUserId)<br />
         @Html.EditorFor(model => model.RecievingUserId)<br />
-        
+
 
         @Html.LabelFor(model => model.Message)<br />
         @Html.EditorFor(model => model.Message)<br />
