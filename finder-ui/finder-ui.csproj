@@ -142,9 +142,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\FilterConfig2.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\RouteConfig2.cs" />
     <Compile Include="Connected Services\Group3ServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\MessageServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -162,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Models\CreateAccountViewModel.cs" />
     <Compile Include="Models\EditProfileViewModel.cs" />
@@ -177,6 +186,16 @@
     <Compile Include="SessionHandler\CustomAuthorization.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Connected Services\MessageServiceReference\finder_ui.MessageServiceReference.Messageinfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\MessageServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\MessageServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\MessageServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\MessageServiceReference\service11.disco" />
     <Content Include="Connected Services\UserLoginServiceReference\finder_ui.UserLoginServiceReference.ReturnUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -195,6 +214,16 @@
     <Content Include="Connected Services\UserLoginServiceReference\finder_ui.UserLoginServiceReference.InterfaceBlockedUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\MessageServiceReference\Service11.wsdl" />
+    <None Include="Connected Services\MessageServiceReference\service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MessageServiceReference\service131.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MessageServiceReference\service132.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\UserLoginServiceReference\LoginService.disco" />
     <None Include="Connected Services\UserLoginServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\UserLoginServiceReference\configuration.svcinfo" />
@@ -249,6 +278,9 @@
     </None>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\findericon.png" />
+    <Content Include="Content\Images\finderlogo.png" />
+    <Content Include="Content\Images\User.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -314,6 +346,10 @@
     <Content Include="Views\Service\Create.cshtml" />
     <Content Include="Views\Service\Delete.cshtml" />
     <Content Include="Views\Service\Edit.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\Message\Message.cshtml" />
+    <Content Include="Views\Message\Searching.cshtml" />
+    <Content Include="Views\Message\Kontrakt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -335,6 +371,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\MessageServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\UserLoginServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\UserProfileServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\Group3ServiceReference\" />

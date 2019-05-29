@@ -1,0 +1,29 @@
+﻿@model MessageAdminProject.Models.LogInClass
+@{
+    ViewBag.Title = "LogInAdmin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">Logga in som admin</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            @using (Html.BeginForm("LogInAdmin", "Home", FormMethod.Post))
+            {
+                <p style="text-align:center">@ViewBag.error</p>
+                <div class="form-group">
+                    <label for="username">Användarnamn</label>
+                    @Html.ValidationMessageFor(model => model.adminUserame)
+                    @Html.TextBoxFor(model => model.adminUserame, new { @class = "form-control text-center", @placeholder = "Användarnamn / e-post" })
+                </div>
+                <div class="form-group">
+                    <label for="userLastName">Lösenord</label>
+                    @Html.TextBoxFor(model => model.adminPassword, new { @class = "form-control text-center", @placeholder = "Lösenord" })
+                </div>
+                <button style="margin-left:25%; background-color:limegreen" type="submit" class="btn">Logga in</button>
+            }
+        </div>
+
+    </div>
+</div>

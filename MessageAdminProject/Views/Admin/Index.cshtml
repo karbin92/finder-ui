@@ -1,0 +1,40 @@
+﻿@model MessageAdminProject.MeddelandeServiceReference.Messageinfo
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ IEnumerable<MessageAdminProject.MeddelandeServiceReference.Messageinfo> Lista = ViewBag.Lista;
+}
+<div>
+    <br/>
+    <table id="meddelanden">
+
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Id)</th>
+            <th>@Html.DisplayNameFor(m => m.Message)</th>
+            <th>@Html.DisplayNameFor(m => m.RecievingUserId)</th>
+            <th>@Html.DisplayNameFor(m => m.SendingUserId)</th>
+            <th>@Html.DisplayNameFor(m => m.ServiceId)</th>
+            <th>@Html.DisplayNameFor(m => m.ServiceTitle)</th>
+            <th>@Html.DisplayNameFor(m => m.Time)</th>
+            <th>@Html.DisplayNameFor(m => m.UserPicture)</th>
+            <th>Radera?</th>
+
+        </tr>
+
+        @foreach (var item in Lista)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => item.Id)</td>
+                <td>@Html.DisplayFor(m => item.Message)</td>
+                <td>@Html.DisplayFor(m => item.RecievingUserId)</td>
+                <td>@Html.DisplayFor(m => item.SendingUserId)</td>
+                <td>@Html.DisplayFor(m => item.ServiceId)</td>
+                <td>@Html.DisplayFor(m => item.ServiceTitle)</td>
+                <td>@Html.DisplayFor(m => item.Time)</td>
+                <td>@Html.DisplayFor(m => item.UserPicture)</td>
+                <td><button style="background-color: limegreen">@Html.ActionLink("Radera", "DeleteMessage", new { id = item.Id })</button></td>
+            </tr>
+        }
+    </table>
+</div>

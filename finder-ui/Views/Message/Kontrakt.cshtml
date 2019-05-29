@@ -1,0 +1,40 @@
+﻿@model finder_ui.Group3ServiceReference.Service
+
+@*{int serviceId, int counterpartId, int serviceOwnerId, int contractCreatorId*
+    {
+    serviceId= knapp.id
+    serviceOwner = knapp.´CreatorID
+    if (knapp.CreatorID != Session.id)
+    {
+    counterPartId = Session.id
+    } else if (knapp.CreatorID == Session.id)
+    {
+    counterPArtId = DetAndraId:t
+    }
+    contractCreatorId = Session.Id
+    }*@
+@{
+
+    //int recieving = 0;
+    int sessId = Convert.ToInt32(Session["UserId"]);
+    int counterpartId = 0;
+
+
+
+
+    if (Model.CreatorID != sessId)
+    {
+        counterpartId = sessId;
+
+        @Html.ActionLink("Skapa Kontrakt", "Kontrakt", "Message", new { serviceId = Model.Id, serviceOwnerId = Model.CreatorID, counterpartId, contractCreatorId = sessId })
+    }
+    else
+    {
+
+        @Html.ActionLink("Skapa Kontrakt", "Kontrakt", "Message", new { serviceId = Model.Id, serviceOwnerId = sessId, counterpartId = Model.CreatorID, conractCreatorId = sessId })
+
+    }
+}
+
+@Html.ActionLink("Skapa Kontrakt", "Kontrakt", "Message", new { serviceId = Model.Id, serviceOwnerId = counterpartId, counterpartId = Model.CreatorID, conractCreatorId = sessId })
+
