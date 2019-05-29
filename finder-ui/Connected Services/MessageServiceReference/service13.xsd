@@ -17,7 +17,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="newMessage" nillable="true" type="q2:AddMessage" />
-        <xs:element minOccurs="0" name="sendingId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

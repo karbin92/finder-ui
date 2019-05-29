@@ -10,9 +10,9 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RecievingUserId" type="xs:int" />
-      <xs:element minOccurs="0" name="SendingUserId" type="xs:int" />
-      <xs:element minOccurs="0" name="ServiceId" type="xs:int" />
+      <xs:element name="RecievingUserId" type="xs:int" />
+      <xs:element name="SendingUserId" type="xs:int" />
+      <xs:element name="ServiceId" type="xs:int" />
       <xs:element minOccurs="0" name="ServiceTitle" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
       <xs:element minOccurs="0" name="UserPicture" nillable="true" type="xs:base64Binary" />

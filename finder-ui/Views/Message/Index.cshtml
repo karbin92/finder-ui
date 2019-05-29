@@ -19,106 +19,99 @@
 @{
     IEnumerable<finder_ui.UserLoginServiceReference.InterfaceUser> test = ViewBag.test; //ger info från specifik user (försökt ill recievinguserId)
 }
+@{
+    finder_ui.Group3ServiceReference.Service knapp = ViewBag.skapaKontrakt; //skapa kontrakt
+}
+
+
+
 @foreach (var item in test)
 {
     <p>
         @Html.DisplayFor(m => item.ID)
+        @Html.DisplayFor(m => item.Username)
     </p>
 }
+@*Searchtest*@
+@Html.ActionLink("Till meddelanden", "Message", "Message", new { id = 10 }, new { })
+
+@Html.ActionLink("Searching", "Searching", "Message", new { a = "katt" }, new { })
     <div class="outercontainer">
-        <div class="inboxcontainer">
-            <div class="inboxbanner">
-                <h3 style="display:inline-block; margin-left:1%;">Inbox</h3>
-            </div>
 
 
 
+        <div class="activemessagebanner">
+            <h3 style="display:inline-block; margin-left:1%;">username</h3>
+            @*<input type="button" style="margin-left:50%; background-color:orangered;
+             font-weight:bold; color:white; border-radius: 12px;"
+            value="Skapa kontrakt"
+            onclick="location.href='@Url.Action("Action", "Message")'" />*@
 
-            <div class="messagecontainer">
 
-                <p>@Html.DisplayFor(m => svar.Title)</p>
-                <p>@Html.DisplayFor(m => svar.CreatedTime)</p>
-            </div>
-
-
-
+            @*{int serviceId, int counterpartId, int serviceOwnerId, int contractCreatorId*
+            {
+            serviceId= knapp.id
+            serviceOwner = knapp.´CreatorID
+            if (knapp.CreatorID != Session.id)
+            {
+            counterPartId = Session.id
+            } else if (knapp.CreatorID == Session.id)
+            {
+            counterPArtId = DetAndraId:t
             }
+            contractCreatorId = Session.Id
+            }*@
+            @*@{
+                int sessId = Convert.ToInt32(Session["UserId"]);
+                int counterpartId = 0;
 
-
-
-        </div>
-        <div class="line"></div>
-
-        <div>
-            <div class="activemessagecontainer">
-                <div class="activemessagebanner">
-                    <h3 style="display:inline-block; margin-left:1%;">username</h3>
-                    <input type="button" style="margin-left:50%; background-color:orangered;
-                    font-weight:bold; color:white; border-radius: 12px;"
-                           value="Skapa kontrakt"
-                           onclick="location.href='@Url.Action("Action", "Controller")'" />
-
-                    @*<button>@Html.ActionLink("Skapa Kontrakt", "Create", "Service", new { serviceId=Model.ServiceId , counterpartId=Model.RecievingUserId,
-                        serviceOwnerId =Model.SendingUserId, contractCreatorId=Model.Id })</button>*@
-
-                </div>
-
-                @foreach (var item in Lista)
+                if (knapp.CreatorID != sessId)
                 {
+                    counterpartId = sessId;
 
-                    <div class="activemessage messagecontainer">
-                        <p style="float:left;">@Html.DisplayFor(m => item.Message)</p>
-                        <label>test recieving && sendingId</label> @*ta bort efter*@ 
-                        <p>@Html.DisplayFor(m => item.RecievingUserId)</p>
-                        <p>@Html.DisplayFor(m => item.SendingUserId)</p>
-                        
-
-
-
-
-                        <hr width="90%">
-                    </div>
+                    @Html.ActionLink("Skapa Kontrakt", "Index", "Message", new { serviceId = knapp.Id, counterpartId, serviceOwnerId = knapp.CreatorID, contractCreatorId = sessId })
                 }
-            </div>
-            <textarea style="margin-top:2%;" class="answerbox" name="subject" placeholder="Write something.."></textarea>
-            <br />
-            <br />
-            <button type="submit">Send</button>
+                else
+                {
+                    knapp.CreatorID = sessId;
+                    @Html.ActionLink("Skapa Kontrakt", "Index", "Message", new { serviceId = knapp.Id, counterpartId=userMedd, serviceOwnerId = knapp.CreatorID, conractCreatorId = sessId })
+
+                }
+
+
+
+
+
+                @Html.ActionLink("Skapa Kontrakt", "Index", "Message", new { serviceId = knapp.Id, creatorId = knapp })
+
+
+            }*@
+
         </div>
+
+
+
+        @foreach (var item in Lista)
+        {
+
+            <label>Till: </label>
+            <p>@Html.DisplayFor(m => item.RecievingUserId)</p>
+            <h5>@Html.DisplayFor(m => item.ServiceTitle)</h5>
+            <p>@Html.DisplayFor(m => item.Message)</p>
+            <label>sendinguserId ta bort sen</label>
+            <p>@Html.DisplayFor(m => item.SendingUserId)</p>
+            <a href="@Url.Action("Message", "Message", new { id = item.RecievingUserId,servId = 100, title =  "hej"  })"> Skicka Meddelande</a>
+            <a href="@Url.Action("Message", "Message", new { servId = 1})"> Skicka Meddelande 100</a>
+
+
+            <hr width="90%">
+
+        }
+
+
+
 
 
     </div>
-    //detta tas bort sen, måste införas ovan
-<div>
 
-    @using (Html.BeginForm())
-    {
-
-
-        @Html.LabelFor(model => model.RecievingUserId)<br />
-        @Html.EditorFor(model => model.RecievingUserId)<br />
-
-
-        @Html.LabelFor(model => model.Message)<br />
-        @Html.EditorFor(model => model.Message)<br />
-
-        @Html.LabelFor(model => model.ServiceId)<br />
-        @Html.EditorFor(model => model.ServiceId)<br />
-
-        @Html.LabelFor(model => model.ServiceTitle)<br />
-        @Html.EditorFor(model => model.ServiceTitle)<br />
-
-
-
-
-        <input type="submit" value="Skicka meddelande" />
-    }
-
-
-</div>
-
-@*@Html.LabelFor(model => returnUsers, "reciever", htmlAttributes: new { @class = "control-label col-md-2" })
-
-    @Html.DropDownList("", null, htmlAttributes: new { @class = "form-control" })
-    @Html.ValidationMessageFor(model => returnUsers, "", new { @class = "text-danger" })*@
 

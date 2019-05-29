@@ -28,13 +28,10 @@ namespace finder_ui.MessageServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int RecievingUserIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int SendingUserIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ServiceIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -82,7 +79,7 @@ namespace finder_ui.MessageServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int RecievingUserId {
             get {
                 return this.RecievingUserIdField;
@@ -95,7 +92,7 @@ namespace finder_ui.MessageServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int SendingUserId {
             get {
                 return this.SendingUserIdField;
@@ -108,7 +105,7 @@ namespace finder_ui.MessageServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int ServiceId {
             get {
                 return this.ServiceIdField;
@@ -338,10 +335,10 @@ namespace finder_ui.MessageServiceReference {
         System.Threading.Tasks.Task<finder_ui.MessageServiceReference.Messageinfo[]> GetMessagesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddMessage", ReplyAction="http://tempuri.org/IService1/AddMessageResponse")]
-        void AddMessage(finder_ui.MessageServiceReference.AddMessage newMessage, int sendingId);
+        void AddMessage(finder_ui.MessageServiceReference.AddMessage newMessage);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddMessage", ReplyAction="http://tempuri.org/IService1/AddMessageResponse")]
-        System.Threading.Tasks.Task AddMessageAsync(finder_ui.MessageServiceReference.AddMessage newMessage, int sendingId);
+        System.Threading.Tasks.Task AddMessageAsync(finder_ui.MessageServiceReference.AddMessage newMessage);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserMessage", ReplyAction="http://tempuri.org/IService1/GetUserMessageResponse")]
         finder_ui.MessageServiceReference.Messageinfo[] GetUserMessage(int id1);
@@ -397,12 +394,12 @@ namespace finder_ui.MessageServiceReference {
             return base.Channel.GetMessagesAsync();
         }
         
-        public void AddMessage(finder_ui.MessageServiceReference.AddMessage newMessage, int sendingId) {
-            base.Channel.AddMessage(newMessage, sendingId);
+        public void AddMessage(finder_ui.MessageServiceReference.AddMessage newMessage) {
+            base.Channel.AddMessage(newMessage);
         }
         
-        public System.Threading.Tasks.Task AddMessageAsync(finder_ui.MessageServiceReference.AddMessage newMessage, int sendingId) {
-            return base.Channel.AddMessageAsync(newMessage, sendingId);
+        public System.Threading.Tasks.Task AddMessageAsync(finder_ui.MessageServiceReference.AddMessage newMessage) {
+            return base.Channel.AddMessageAsync(newMessage);
         }
         
         public finder_ui.MessageServiceReference.Messageinfo[] GetUserMessage(int id1) {
